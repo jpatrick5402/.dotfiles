@@ -1,5 +1,0 @@
-ln -s ~/dotfiles/nvim/ ~/.config/nvim
-
-Apps needed:
-nvim
-lynx
