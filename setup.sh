@@ -17,3 +17,5 @@ sudo make install
 # install z
 git clone https://github.com/rupa/z.git
 echo ". /home/jpatrick5402/z/z.sh" >> .bashrc
+# install fzf
+sudo apt install fzf -y
