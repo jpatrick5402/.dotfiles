@@ -9,7 +9,7 @@ git clone https://github.com/jpatrick5402/dotfiles.git
 mkdir .config/
 ln -s ~/dotfiles/nvim/ ~/.config/nvim
 # build neovim: follow https://github.com/neovim/neovim/blob/master/BUILD.md
-sudo apt-get install ninja-build gettext cmake unzip curl build-essential\
+sudo apt-get install ninja-build gettext cmake unzip curl build-essential
 sudo apt install npm -y
 git clone https://github.com/neovim/neovim
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
