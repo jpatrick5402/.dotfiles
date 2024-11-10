@@ -13,6 +13,7 @@ sudo pacman -S base-devel cmake unzip ninja curl npm
 git clone https://github.com/neovim/neovim
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
+cd
 # install z
 git clone https://github.com/rupa/z.git
 echo ". /home/jpatrick5402/z/z.sh" >> .bashrc
