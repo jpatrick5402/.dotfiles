@@ -20,4 +20,4 @@ echo ". /home/jpatrick5402/z/z.sh" >> .bashrc
 # install fzf
 sudo apt install fzf -y
 # customize prompt
-echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─╼ "' >> .bashrc
+echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─> "' >> .bashrc
