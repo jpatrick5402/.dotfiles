@@ -21,3 +21,8 @@ echo ". /home/jpatrick5402/z/z.sh" >> .bashrc
 sudo pacman -S fzf
 # customize prompt
 echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─> "' >> .bashrc
+# install print drivers
+cd
+git clone https://aur.archlinux.org/cnijfilter2.git
+cd cnijfilter2/
+makepkg -si
