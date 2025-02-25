@@ -26,7 +26,7 @@ choco install autohotkey -y --force
 # Create AutoHotKey shortcut in startup folder
 cd ~
 $shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut(".\AppData\Microsoft\Windows\Start Menu\Programs\Startup\AutoHotKey Main.lnk")
+$shortcut = $shell.CreateShortcut(".\AppData\Local\Microsoft\Windows\Start Menu\Programs\Startup\AutoHotKey Main.lnk")
 $shortcut.TargetPath = "C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"
 $shortcut.Arguments = "`".\dotfiles\main.ahk`""
 $shortcut.Save()
