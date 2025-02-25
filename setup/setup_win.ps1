@@ -24,8 +24,9 @@ choco install nodejs -y
 # Set up AutoHotKey
 choco install autohotkey -y
 # Create AutoHotKey shortcut in startup folder
+cd ~
 $shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AutoHotKey Main.lnk")
+$shortcut = $shell.CreateShortcut(".\AppData\Microsoft\Windows\Start Menu\Programs\Startup\AutoHotKey Main.lnk")
 $shortcut.TargetPath = "C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"
 $shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\main.ahk`""
 $shortcut.Save()
