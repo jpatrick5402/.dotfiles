@@ -40,3 +40,8 @@ $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Men
 $shortcut.TargetPath = "powershell.exe"
 $shortcut.Arguments = "`"$env:userprofile\dotfiles\scripts\updatedotfiles.ps1`""
 $shortcut.Save()
+
+# Install the font
+cd $env:USERPROFILE\dotfiles\
+.\JetBrainsMonoNerdFont-Medium.ttf
+cd ~
