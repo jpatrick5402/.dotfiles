@@ -1,11 +1,17 @@
 cd ~
-git clone https://github.com/jpatrick5402/dotfiles
 
 # SFTP Drive - https://www.callback.com/sftpdrive
 # ^not sure how to implement
 
 # Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# Install Git
+choco install git -y
+
+# Pull dotfiles into home dir
+cd ~
+git clone https://github.com/jpatrick5402/dotfiles
 
 # Install NVIM
 cd ~
