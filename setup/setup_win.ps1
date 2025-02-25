@@ -34,7 +34,7 @@ $shortcut.Save()
 # Install Vivaldi
 choco install Vivaldi -y
 
-# update dotfiles
+# Setup update dotfiles
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Update Dotfiles.lnk")
 $shortcut.TargetPath = "powershell.exe"
