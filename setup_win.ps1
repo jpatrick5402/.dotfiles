@@ -23,3 +23,6 @@ $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Men
 $shortcut.TargetPath = "C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"
 $shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\main.ahk`""
 $shortcut.Save()
+
+# Install Vivaldi
+choco install Vivaldi -y
