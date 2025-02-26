@@ -26,7 +26,7 @@ choco install sshfs -y
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Connect Pi.lnk")
 $shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "`"$env:userprofile\dotfiles\scripts\AutoConnectPi.ps1`""
+$shortcut.Arguments = "`"C:\Users\Joseph` Patrick\dotfiles\scripts\AutoConnectPi.ps1`""
 $shortcut.Save()
 
 # Install/Set up AutoHotKey
@@ -36,7 +36,7 @@ cd ~
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AutoHotKey Main.lnk")
 $shortcut.TargetPath = "C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"
-$shortcut.Arguments = "`"$env:userprofile\dotfiles\main.ahk`""
+$shortcut.Arguments = "`"C:\Users\Joseph` Patrick\dotfiles\main.ahk`""
 $shortcut.Save()
 
 # Install Vivaldi
@@ -46,7 +46,7 @@ choco install Vivaldi -y
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Update Dotfiles.lnk")
 $shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "`"$env:userprofile\dotfiles\scripts\updatedotfiles.ps1`""
+$shortcut.Arguments = "`"C:\Users\Joseph` Patrick\dotfiles\scripts\updatedotfiles.ps1`""
 $shortcut.Save()
 
 # Install the font
