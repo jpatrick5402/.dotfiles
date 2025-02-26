@@ -1,8 +1,5 @@
 cd ~
 
-# SFTP Drive - https://www.callback.com/sftpdrive
-# ^not sure how to implement
-
 # Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
@@ -21,7 +18,13 @@ choco install mingw -y
 choco install fzf -y
 choco install nodejs -y
 
-# Set up AutoHotKey
+# Install steam
+choco install steam -y
+
+# Install NetDrive
+choco install netdrive -y
+
+# Install/Set up AutoHotKey
 choco install autohotkey -y
 # Create AutoHotKey shortcut in startup folder
 cd ~
