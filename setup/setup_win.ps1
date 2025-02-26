@@ -21,9 +21,6 @@ choco install nodejs -y
 # Install steam
 choco install steam -y
 
-# Install NetDrive
-choco install netdrive -y
-
 # Install/Set up AutoHotKey
 choco install autohotkey -y
 # Create AutoHotKey shortcut in startup folder
