@@ -41,9 +41,7 @@ $shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\updatedotfiles.ps1`""
 $shortcut.Save()
 
 # Install the font
-cd $env:USERPROFILE\dotfiles\
-.\JetBrainsMonoNerdFont-Medium.ttf
-cd ~
+.\dotfiles\JetBrainsMonoNerdFont-Medium.ttf
 
 # Install sshfs
 choco install sshfs -y
