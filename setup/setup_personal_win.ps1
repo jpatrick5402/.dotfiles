@@ -18,17 +18,6 @@ choco install mingw -y
 choco install fzf -y
 choco install nodejs -y
 
-# Install steam
-choco install steam -y
-
-# Install/Set up sshfs
-choco install sshfs -y
-$shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Connect Pi.lnk")
-$shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\AutoConnectPi.ps1`""
-$shortcut.Save()
-
 # Install/Set up AutoHotKey
 choco install autohotkey -y
 # Create AutoHotKey shortcut in startup folder
@@ -53,3 +42,15 @@ $shortcut.Save()
 cd $env:USERPROFILE\dotfiles\
 .\JetBrainsMonoNerdFont-Medium.ttf
 cd ~
+
+# Install steam
+choco install steam -y
+
+# Install/Set up sshfs
+choco install sshfs -y
+$shell = New-Object -ComObject WScript.Shell
+$shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Connect Pi.lnk")
+$shortcut.TargetPath = "powershell.exe"
+$shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\AutoConnectPi.ps1`""
+$shortcut.Save()
+

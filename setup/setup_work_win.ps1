@@ -25,7 +25,7 @@ cd ~
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AutoHotKey Main.lnk")
 $shortcut.TargetPath = "C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"
-$shortcut.Arguments = "`"$env:userprofile\dotfiles\main.ahk`""
+$shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\main.ahk`""
 $shortcut.Save()
 
 # Install Vivaldi
@@ -35,10 +35,13 @@ choco install Vivaldi -y
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Update Dotfiles.lnk")
 $shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "`"$env:userprofile\dotfiles\scripts\updatedotfiles.ps1`""
+$shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\updatedotfiles.ps1`""
 $shortcut.Save()
 
 # Install the font
 cd $env:USERPROFILE\dotfiles\
 .\JetBrainsMonoNerdFont-Medium.ttf
 cd ~
+
+# Install/Set up sshfs
+choco install sshfs -y
