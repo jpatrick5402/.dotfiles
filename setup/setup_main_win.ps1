@@ -45,5 +45,5 @@ cd $env:USERPROFILE\dotfiles\
 .\JetBrainsMonoNerdFont-Medium.ttf
 cd ~
 
-# Install/Set up sshfs
+# Install sshfs
 choco install sshfs -y
