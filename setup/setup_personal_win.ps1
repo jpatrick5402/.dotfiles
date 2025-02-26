@@ -17,6 +17,7 @@ choco install neovim -y
 choco install mingw -y
 choco install fzf -y
 choco install nodejs -y
+choco install neovide -y
 
 # Install/Set up AutoHotKey
 choco install autohotkey -y
