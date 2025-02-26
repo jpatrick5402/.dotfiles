@@ -115,6 +115,8 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 }
 :O:unk::Unknown
 
+^!v::Run "C:\Program Files\Neovide\neovide.exe"
+
 ;------------------------------------------------------------------------------
 ; Word endings
 ;------------------------------------------------------------------------------

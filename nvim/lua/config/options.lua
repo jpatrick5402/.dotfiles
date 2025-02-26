@@ -10,4 +10,4 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.spell = true
 vim.opt.spelllang = "en"
 
-vim.opt.guifont = "JetBrainsMono Nerd Font"
+vim.opt.guifont = "JetBrainsMono Nerd Font:h10"
