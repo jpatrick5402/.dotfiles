@@ -18,6 +18,7 @@ choco install mingw -y
 choco install fzf -y
 choco install nodejs -y
 choco install neovide -y
+choco install ripgrep -y
 
 # Install/Set up AutoHotKey
 choco install autohotkey -y
