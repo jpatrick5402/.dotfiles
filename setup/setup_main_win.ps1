@@ -40,6 +40,9 @@ $shortcut.TargetPath = "powershell.exe"
 $shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\updatedotfiles.ps1`""
 $shortcut.Save()
 
+# Install powertoys
+choco install powertoys -y
+
 # Install the font
 .\dotfiles\JetBrainsMonoNerdFont-Medium.ttf
 
