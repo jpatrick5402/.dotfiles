@@ -6,20 +6,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 # Install Git
 choco install git -y
 
-# Process to restart shell if git is not yet recognized as env var
-function Restart-PowerShell {
-  Start-Process powershell.exe -ArgumentList "-NoExit", "& '$($Script:MyInvocation.MyCommand.Path)'" -Verb RunAs
-  exit
-}
-try {
-    & git --version | Out-Null
-    Write-Host "Git is installed (found in PATH)."
-    $gitVersion = & git --version
-    Write-Host $gitVersion
-}
-catch {
-    Restart-PowerShell
-}
+# Process to refresh environment variables
+$env:ChocolateyInstall = Convert-Path "$((Get-Command choco).Path)\..\.."   
+Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+Update-SessionEnvironment
 
 # Configure git
 git config --global user.email "jpatrick5402@gmail.com"
@@ -73,27 +63,33 @@ choco install sshfs -y
 
 # Decide if to perform personal install
 function Confirm-Continue {
-  param (
+    param (
     [string]$Prompt = "Do you want to perform personal installations? (y/n)"
-  )
+    )
+    while ($true) {
+        $response = Read-Host -Prompt $Prompt
 
-  while ($true) {
-    $response = Read-Host -Prompt $Prompt
-
-    if ($response -eq "y" -or $response -eq "Y") {
-      return $true
-    } elseif ($response -eq "n" -or $response -eq "N") {
-      return $false
-    } else {
-      Write-Host "Invalid input. Please enter 'y' or 'n'."
+        if ($response -eq "y" -or $response -eq "Y") {
+            return $true
+        } elseif ($response -eq "n" -or $response -eq "N") {
+            return $false
+        } else {
+            Write-Host "Invalid input. Please enter 'y' or 'n'."
+        }
     }
-  }
 }
 
-if (Confirm-Continue) {
-    Write-Host "Continuing..."
-    Start-Process powershell.exe -ArgumentList "-NoExit", "$env:USERPROFILE\dotfiles\setup\setup_personal_win.ps1" -Verb RunAs
-} else {
+# Check to see if this is a personal installation
+if (-not (Confirm-Continue)) {
     Write-Host "Exiting..."
-  exit
+    exit
 }
+
+# Install steam
+choco install steam -y
+
+# Install StartAllBack
+choco install StartAllBack -y
+
+# Set up sshfs
+Start-Process powershell.exe -ArgumentList "-NoExit", "$env:USERPROFILE\dotfiles\scripts\AutoConnectPi.ps1" -Verb RunAs
