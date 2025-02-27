@@ -6,6 +6,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 # Install Git
 choco install git -y
 
+# Need to create some way to restart shell here so git can be used
+
 # Pull dotfiles into home dir
 cd ~
 git clone https://github.com/jpatrick5402/dotfiles
@@ -42,6 +44,9 @@ $shortcut.Save()
 
 # Install powertoys
 choco install powertoys -y
+
+# Install logitech options plus
+choco install logioptionsplus -y
 
 # Install the font
 .\dotfiles\JetBrainsMonoNerdFont-Medium.ttf
