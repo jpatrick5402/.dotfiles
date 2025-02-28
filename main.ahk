@@ -106,7 +106,7 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
     Send WorkSignature
 }
 :X:_w2::{
-    Send "Hello XXXXXXXX,`rI've not been able to reach you after my last contact.`rDo you still need assistance with this issue?`r`rIf you have any questions or need assistance please call us at (585) 275-3200`r`r"
+    Send "Hello XXXXXXXX,`rI've not been able to reach you after my last contact.`rDo you still need assistance with this issue?`r`rIf you have any questions or need assistance, please call us at (585) 275-3200`r`r"
     Send WorkSignature
 }
 :X:_w3::{
