@@ -61,6 +61,10 @@ choco install logioptionsplus -y
 # Install sshfs
 choco install sshfs -y
 
+# Add git command to environment variables
+$temppath=$env:Path+";C:\Program Files\Git\usr\bin"
+[Environment]::SetEnvironmentVariable("Path", $temppath , "User")
+
 # Decide if to perform personal install
 function Confirm-Continue {
     param (
@@ -78,9 +82,6 @@ function Confirm-Continue {
         }
     }
 }
-
-# Add git command to environment variables
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Git\usr\bin", "User")
 
 # Check to see if this is a personal installation
 if (-not (Confirm-Continue)) {
