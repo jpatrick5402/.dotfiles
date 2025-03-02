@@ -79,6 +79,9 @@ function Confirm-Continue {
     }
 }
 
+# Add git command to environment variables
+[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path") + 'C:\Program Files\Git\usr\bin', 'User')
+
 # Check to see if this is a personal installation
 if (-not (Confirm-Continue)) {
     Write-Host "Exiting..."
