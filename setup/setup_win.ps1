@@ -55,9 +55,6 @@ choco install powertoys -y
 # Install logitech options plus
 choco install logioptionsplus -y
 
-# Install the font
-.\dotfiles\JetBrainsMonoNerdFont-Medium.ttf
-
 # Install sshfs
 choco install sshfs -y
 
@@ -66,6 +63,9 @@ if (-not ([Environment]::GetEnvironmentVariable("Path", "user") -split ';' -cont
     $temppath=[Environment]::GetEnvironmentVariable("Path", "user")+";C:\Program Files\Git\usr\bin"
     [Environment]::SetEnvironmentVariable("Path", $temppath , "User")
 }
+
+# Install the font
+.\dotfiles\JetBrainsMonoNerdFont-Medium.ttf
 
 # Decide if to perform personal install
 function Confirm-Continue {
