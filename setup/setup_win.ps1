@@ -97,7 +97,7 @@ if (Confirm-Continue) {
 
     # Install/Setup Mouse tool
     choco install mouse-jiggler -y
-    $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Connect Pi.lnk")
+    $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Mouse.lnk")
     $shortcut.TargetPath = "powershell.exe"
     $shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\AutoConnectPi.ps1`""
     $shortcut.Save()
