@@ -76,7 +76,7 @@ choco install mousewithoutborders -y
 # Decide if to perform personal install
 function Confirm-Continue {
     param (
-    [string]$Prompt = "Do you want to perform these installations? (y/n)"
+    [string]$Prompt = "(y/n)"
     )
     while ($true) {
         $response = Read-Host -Prompt $Prompt
@@ -92,7 +92,7 @@ function Confirm-Continue {
 }
 
 # Check to see if this is a work installation
-Write-Host "Work Installations"
+Write-Host -NoNewLine "Would you like to perform WORK installations"
 if (Confirm-Continue) {
 
     # Install/Setup Mouse tool
@@ -104,7 +104,7 @@ if (Confirm-Continue) {
 }
 
 # Check to see if this is a personal installation
-Write-Host "Personal Installations"
+Write-Host -NoNewLine "Would you like to perform PERSONAL installations"
 if (-not (Confirm-Continue)) {
     Write-Host "Exiting..."
     exit
