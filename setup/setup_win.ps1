@@ -19,6 +19,9 @@ git config --global user.name "jpatrick5402"
 cd ~
 git clone https://github.com/jpatrick5402/dotfiles
 
+# Set dotfiles as safe dir
+git config --global --add safe.directory C:/Users/jpatric5/dotfiles
+
 # Install NVIM
 cd ~
 New-Item -ItemType SymbolicLink -Path .\AppData\Local\nvim -Target .\dotfiles\nvim\
