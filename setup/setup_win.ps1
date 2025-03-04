@@ -1,3 +1,6 @@
+# To run this script on a new machine run
+# set-executionPolicy Bypass
+
 cd ~
 
 # Install Chocolatey
