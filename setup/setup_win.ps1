@@ -24,7 +24,7 @@ git config --global --add safe.directory C:/Users/jpatric5/dotfiles
 
 # Install NVIM
 cd ~
-New-Item -ItemType SymbolicLink -Path .\AppData\Local\nvim -Target .\dotfiles\nvim\
+New-Item -ItemType SymbolicLink -Path .\AppData\Local\nvim -Target $env:USERPROFILE\dotfiles\nvim\
 choco install neovim -y
 choco install mingw -y
 choco install fzf -y
