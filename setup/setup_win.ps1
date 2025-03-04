@@ -67,13 +67,16 @@ if (-not ([Environment]::GetEnvironmentVariable("Path", "user") -split ';' -cont
     [Environment]::SetEnvironmentVariable("Path", $temppath , "User")
 }
 
+# Install Mouse Without Borders
+choco install mousewithoutborders -y
+
 # Install the font
 .\dotfiles\JetBrainsMonoNerdFont-Medium.ttf
 
 # Decide if to perform personal install
 function Confirm-Continue {
     param (
-    [string]$Prompt = "Do you want to perform personal installations? (y/n)"
+    [string]$Prompt = "Do you want to perform these installations? (y/n)"
     )
     while ($true) {
         $response = Read-Host -Prompt $Prompt
@@ -88,7 +91,20 @@ function Confirm-Continue {
     }
 }
 
+# Check to see if this is a work installation
+Write-Host "Work Installations"
+if (Confirm-Continue) {
+
+    # Install/Setup Mouse tool
+    choco install mouse-jiggler -y
+    $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Connect Pi.lnk")
+    $shortcut.TargetPath = "powershell.exe"
+    $shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\AutoConnectPi.ps1`""
+    $shortcut.Save()
+}
+
 # Check to see if this is a personal installation
+Write-Host "Personal Installations"
 if (-not (Confirm-Continue)) {
     Write-Host "Exiting..."
     exit
