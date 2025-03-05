@@ -114,6 +114,7 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
     Send WorkSignature
 }
 :O:unk::Unknown
+:O:_unable::Unable to contact customer after 3 attempts, closing ticket per KB0010438
 
 hpath := EnvGet("USERPROFILE")
 ^!z::Run "C:\Program Files\Neovide\neovide.exe"
