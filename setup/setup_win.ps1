@@ -35,6 +35,9 @@ choco install nodejs -y
 choco install neovide -y
 choco install ripgrep -y
 
+# Install vscode
+choco install vscode -y
+
 # Install/Set up AutoHotKey
 choco install autohotkey -y
 # Create AutoHotKey shortcut in startup folder
