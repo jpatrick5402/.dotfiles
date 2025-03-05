@@ -116,8 +116,8 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 :O:unk::Unknown
 
 hpath := EnvGet("USERPROFILE")
-^!n::Run "C:\Program Files\Neovide\neovide.exe"
-^!x::Run hpath . "\AppData\Local\Vivaldi\Application\vivaldi.exe"
+^!x::Run "C:\Program Files\Neovide\neovide.exe"
+^!v::Run hpath . "\AppData\Local\Vivaldi\Application\vivaldi.exe"
 ^!c::Run "C:\Program Files\Microsoft VS Code\Code.exe"
 ^!z::Run "explorer.exe"
 
