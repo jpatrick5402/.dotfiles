@@ -116,6 +116,10 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 :O:unk::Unknown
 :O:_unable::Unable to contact customer after 3 attempts, closing ticket per KB0010438
 
+:X:_ts::{
+    Send FormatTime(A_Now, "MM/dd/yyy HH:mm:ss")
+}
+
 hpath := EnvGet("USERPROFILE")
 ^!z::Run "C:\Program Files\Neovide\neovide.exe"
 ^!v::Run hpath . "\AppData\Local\Vivaldi\Application\vivaldi.exe"
