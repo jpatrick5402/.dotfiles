@@ -1,4 +1,47 @@
-#main .inner > div:has(#tabs-tabbar-container:is(.left, .right)):not(:hover),
-#tabs-tabbar-container:not(:hover):is(.left, .right) {
-  width: 30px !important;
+/* Expanding Left Tabs */
+ 
+/* Animate the tabs, set initial width. */
+#tabs-tabbar-container.left {
+  transition: all 250ms ease !important;
+  width: 30px;
+}
+ 
+#tabs-tabbar-container.left:hover {
+  width: 250px !important;
+}
+ 
+.tabbar-wrapper {
+  position: absolute !important;
+  z-index: 200 !important;
+  height: 100% !important;
+  transition: all 250ms ease !important;
+  width: 30px;
+}
+ 
+.tabbar-wrapper:hover {
+  width: 250px !important;
+}
+ 
+#webview-container {
+  margin-left: 30px;
+}
+ 
+@media all and (display-mode: fullscreen) {
+  #webview-container {
+      margin-left: 0 !important;
+  }
+}
+ 
+/* Shunt the status info (text on hover) over to accomodate tabs */
+#webview-container ~ .StatusInfo {
+  left: 36px !important;
+}
+ 
+.newtab {
+  opacity: 0;
+}
+ 
+#tabs-tabbar-container.left:hover .newtab {
+  opacity: 1 !important;
+  transition: opacity 200ms ease 250ms;
 }
