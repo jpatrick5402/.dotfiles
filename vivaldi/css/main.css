@@ -1,0 +1,4 @@
+#main .inner > div:has(#tabs-tabbar-container:is(.left, .right)):not(:hover),
+#tabs-tabbar-container:not(:hover):is(.left, .right) {
+  width: 30px !important;
+}
