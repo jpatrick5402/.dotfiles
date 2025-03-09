@@ -7,7 +7,7 @@
 }
  
 #tabs-tabbar-container.left:hover {
-  width: 250px !important;
+  width: 150px !important;
 }
  
 .tabbar-wrapper {
@@ -19,7 +19,7 @@
 }
  
 .tabbar-wrapper:hover {
-  width: 250px !important;
+  width: 150px !important;
 }
  
 #webview-container {
