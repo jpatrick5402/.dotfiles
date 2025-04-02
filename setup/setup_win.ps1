@@ -34,6 +34,9 @@ choco install fzf -y
 choco install nodejs -y
 choco install ripgrep -y
 
+# Install ShareX
+choco install sharex -y
+
 # Install vscode
 choco install vscode -y
 
