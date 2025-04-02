@@ -75,9 +75,6 @@ if (-not ([Environment]::GetEnvironmentVariable("Path", "user") -split ';' -cont
 # Install Mouse Without Borders
 choco install mousewithoutborders -y
 
-# Install the font
-.\dotfiles\JetBrainsMonoNerdFont-Regular.ttf
-
 # Decide if to perform personal install
 function Confirm-Continue {
     param (
