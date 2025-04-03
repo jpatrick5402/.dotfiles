@@ -37,6 +37,9 @@ choco install ripgrep -y
 # Install ShareX
 choco install sharex -y
 
+# Install Python
+choco install python -y
+
 # Install vscode
 choco install vscode -y
 
