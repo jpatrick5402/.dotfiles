@@ -40,6 +40,9 @@ choco install sharex -y
 # Install Python
 choco install python -y
 
+# Install Go
+choco install go -y
+
 # Install vscode
 choco install vscode -y
 
