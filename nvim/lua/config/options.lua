@@ -10,7 +10,7 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.spell = true
 vim.opt.spelllang = "en"
 
-vim.opt.guifont = "JetBrainsMono Nerd Font:h10"
+vim.opt.guifont = "FiraCode Nerd Font:h10"
 
 if vim.g.neovide then
     vim.api.nvim_set_current_dir(os.getenv("USERPROFILE"))
