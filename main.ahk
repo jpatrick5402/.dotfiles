@@ -124,7 +124,7 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 }
 
 +#F23::{
-    Run "wt.exe"
+    Run "wt.exe -Mf"
 }
 
 ; hpath := EnvGet("USERPROFILE")
