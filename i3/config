@@ -15,7 +15,7 @@ set $term "xterm"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:FiraCodeNerdFont 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -191,12 +191,15 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#	position top
+#	status_command polybar
+#}
+
+exec polybar
 
 # specify gaps
-gaps inner 10
+gaps inner 5
 
 # multi-media keys
 # Sreen brightness controls
@@ -213,3 +216,4 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always feh --bg-scale /home/jpatrick5402/Pictures/mountain.jpg
 exec $term
 exec firefox
+

@@ -1,4 +1,4 @@
 xterm*dynamicColors: true
 xterm*background: black
 xterm*foreground: gray
-xterm*font: xft:FiraCodeNerdFont
+xterm*font: xft:FiraCodeNerdFont:size=10

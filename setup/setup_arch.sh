@@ -26,3 +26,4 @@ cd
 git clone https://aur.archlinux.org/cnijfilter2.git
 cd cnijfilter2/
 makepkg -si
+sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack
