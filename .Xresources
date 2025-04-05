@@ -1,0 +1,4 @@
+xterm*dynamicColors: true
+xterm*background: black
+xterm*foreground: gray
+xterm*font: xft:FiraCodeNerdFont
