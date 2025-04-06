@@ -40,10 +40,12 @@ DOTFILES=(
  ".gitconfig"
  ".config/polybar/config.ini"
  ".config/i3/config"
+ ".config/picom/picom.conf"
 )
 mkdir ~/.config/
 mkdir ~/.config/polybar/
 mkdir ~/.config/i3/
+mkdir ~/.config/picom/
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
