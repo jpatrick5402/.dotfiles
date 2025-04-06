@@ -1,4 +1,6 @@
-cd
+cd ${HOME}
+
+# update arch
 sudo pacman -Syu --noconfirm
 
 # install/config git
@@ -21,4 +23,21 @@ cd
 git clone https://aur.archlinux.org/cnijfilter2.git
 cd cnijfilter2/
 makepkg -si
+
+# install audio resources
 sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+
+# install i3 resources
+sudo pacman -S polybar picom --noconfirm
+
+# create symlinks for dotfiles
+DIR=${HOME}/.dotfiles/nix_configs
+DOTFILES=(
+ ".Xresources"
+ "polybar/config.ini"
+ "i3/config"
+)
+for dotfile in "${DOTFILES[@]}"; do
+	rm -rf "${HOME}/${dotfile}"
+	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+done
