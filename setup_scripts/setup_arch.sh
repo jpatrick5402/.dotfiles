@@ -37,11 +37,12 @@ sudo pacman -S polybar picom --noconfirm
 DIR=${HOME}/.dotfiles/nix_configs
 DOTFILES=(
  ".Xresources"
- "polybar/config.ini"
- "i3/config"
+ ".config/polybar/config.ini"
+ ".config/i3/config"
 )
-mkdir ~/polybar/
-mkdir ~/i3/
+mkdir ~/.config/
+mkdir ~/.config/polybar/
+mkdir ~/.config/i3/
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
