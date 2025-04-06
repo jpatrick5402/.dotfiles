@@ -213,7 +213,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # startup apps
+exec picom --backend xrender
 exec_always feh --bg-scale ~/.dotfiles/pictures/mountain-red.jpg
 exec firefox
 exec $term
-exec picom --backend xrender
