@@ -29,7 +29,7 @@ sudo pacman -S fzf --noconfirm
 #makepkg -si --noconfirm
 
 # install i3 resources
-sudo pacman -S polybar picom --noconfirm
+sudo pacman -S polybar picom feh --noconfirm
 
 # create symlinks for dotfiles
 DIR=${HOME}/.dotfiles/nix_configs
