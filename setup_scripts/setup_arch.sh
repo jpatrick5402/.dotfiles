@@ -10,6 +10,11 @@ sudo pacman -S git --noconfirm
 git clone https://github.com/jpatrick5402/dotfiles.git
 mkdir .config/
 
+# install basic apps
+sudo pacman -S less --noconfirm
+sudo pacman -S copyq --noconfirm
+sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+
 # install fzf
 sudo pacman -S fzf --noconfirm
 
@@ -21,12 +26,6 @@ echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m
 #git clone https://aur.archlinux.org/cnijfilter2.git
 #cd cnijfilter2/
 #makepkg -si --noconfirm
-
-# install audio resources
-sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
-
-# install clipboard manager
-sudo pacman -S copy1 --noconfirm
 
 # install i3 resources
 sudo pacman -S polybar picom --noconfirm
