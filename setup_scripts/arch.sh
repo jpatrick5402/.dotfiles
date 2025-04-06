@@ -6,21 +6,11 @@ sudo pacman -Syu --noconfirm
 # install/config git
 sudo pacman -S git --noconfirm
 
-# add dotfiles
+# add dotfiles (in case they're not already loaded
 git clone https://github.com/jpatrick5402/.dotfiles
 
 # install basic apps
-sudo pacman -S less --noconfirm
-sudo pacman -S copyq --noconfirm
-sudo pacman -S bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
-sudo pacman -S man --noconfirm
-sudo pacman -S firefox --noconfirm
-
-# install font
-sudo pacman -S ttf-firacode-nerd --noconfirm
-
-# install fzf
-sudo pacman -S fzf --noconfirm
+sudo pacman -S fzf ttf-firacode-nerd firefox man copyq less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
 # install print drivers
 #cd
