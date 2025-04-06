@@ -7,8 +7,7 @@ sudo pacman -Syu --noconfirm
 sudo pacman -S git --noconfirm
 
 # add dotfiles
-git clone https://github.com/jpatrick5402/dotfiles.git
-mkdir .config/
+git clone https://github.com/jpatrick5402/.dotfiles
 
 # install basic apps
 sudo pacman -S less --noconfirm
