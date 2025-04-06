@@ -1,29 +1,24 @@
 cd
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
+
 # install/config git
-sudo pacman -S git
+sudo pacman -S git --noconfirm
 git config --global user.name jpatrick5402
 git config --global user.email jpatrick5402@gmail.com
+
 # add dotfiles
 git clone https://github.com/jpatrick5402/dotfiles.git
 mkdir .config/
-ln -s ~/dotfiles/nvim/ ~/.config/nvim
-# build neovim: follow https://github.com/neovim/neovim/blob/master/BUILD.md
-sudo pacman -S base-devel cmake unzip ninja curl npm
-git clone https://github.com/neovim/neovim
-cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
-cd
-# install z
-git clone https://github.com/rupa/z.git
-echo ". /home/jpatrick5402/z/z.sh" >> .bashrc
+
 # install fzf
-sudo pacman -S fzf
+sudo pacman -S fzf --noconfirm
+
 # customize prompt
-echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─> "' >> .bashrc
+echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─> "' >> ~/.bashrc
+
 # install print drivers
 cd
 git clone https://aur.archlinux.org/cnijfilter2.git
 cd cnijfilter2/
 makepkg -si
-sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack
+sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
