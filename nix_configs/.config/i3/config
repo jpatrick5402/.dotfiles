@@ -217,3 +217,5 @@ exec picom --backend xrender
 exec_always feh --bg-scale ~/.dotfiles/pictures/mountain-red.jpg
 exec firefox
 exec $term
+
+for_window [class="^.*"] border pixel 0
