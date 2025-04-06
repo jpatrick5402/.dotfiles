@@ -14,6 +14,7 @@ mkdir .config/
 sudo pacman -S less --noconfirm
 sudo pacman -S copyq --noconfirm
 sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+sudo pacman -S man --noconfirm
 
 # install font
 sudo pacman -S ttf-firacode-nerd --noconfirm
