@@ -5,8 +5,6 @@ sudo pacman -Syu --noconfirm
 
 # install/config git
 sudo pacman -S git --noconfirm
-git config --global user.name jpatrick5402
-git config --global user.email jpatrick5402@gmail.com
 
 # add dotfiles
 git clone https://github.com/jpatrick5402/dotfiles.git
@@ -37,6 +35,7 @@ sudo pacman -S polybar picom --noconfirm
 DIR=${HOME}/.dotfiles/nix_configs
 DOTFILES=(
  ".Xresources"
+ ".gitconfig"
  ".config/polybar/config.ini"
  ".config/i3/config"
 )
