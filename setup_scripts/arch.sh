@@ -43,5 +43,5 @@ mkdir ~/.config/polybar/
 mkdir ~/.config/i3/
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
-	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
