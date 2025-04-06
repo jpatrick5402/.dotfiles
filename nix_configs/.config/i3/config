@@ -214,6 +214,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # startup apps
 exec_always feh --bg-scale ~/.dotfiles/pictures/mountain-red.jpg
-exec $term
 exec firefox
+exec $term
 exec picom --backend xrender
