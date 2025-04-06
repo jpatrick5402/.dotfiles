@@ -23,9 +23,6 @@ sudo pacman -S ttf-firacode-nerd --noconfirm
 # install fzf
 sudo pacman -S fzf --noconfirm
 
-# customize prompt
-echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─> "' >> ~/.bashrc
-
 # install print drivers
 #cd
 #git clone https://aur.archlinux.org/cnijfilter2.git
@@ -40,6 +37,7 @@ DIR=${HOME}/.dotfiles/nix_configs
 DOTFILES=(
  ".Xresources"
  ".gitconfig"
+ ".bashrc"
  ".config/polybar/config.ini"
  ".config/i3/config"
  ".config/picom/picom.conf"
