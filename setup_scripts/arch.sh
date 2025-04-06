@@ -15,6 +15,9 @@ sudo pacman -S less --noconfirm
 sudo pacman -S copyq --noconfirm
 sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
+# install font
+sudo pacman -S ttf-firacode-nerd --noconfirm
+
 # install fzf
 sudo pacman -S fzf --noconfirm
 
