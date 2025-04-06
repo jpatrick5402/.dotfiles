@@ -20,14 +20,14 @@ git config --global user.name "jpatrick5402"
 
 # Pull dotfiles into home dir
 cd ~
-git clone https://github.com/jpatrick5402/dotfiles
+git clone https://github.com/jpatrick5402/.dotfiles
 
 # Set dotfiles as safe dir
-git config --global --add safe.directory C:/Users/jpatric5/dotfiles
+git config --global --add safe.directory C:/Users/jpatric5/.dotfiles
 
 # Install NVIM
 cd ~
-New-Item -ItemType SymbolicLink -Path .\AppData\Local\nvim -Target $env:USERPROFILE\dotfiles\nvim\
+New-Item -ItemType SymbolicLink -Path .\AppData\Local\nvim -Target $env:USERPROFILE\.dotfiles\nvim\
 choco install neovim -y
 choco install mingw -y
 choco install fzf -y
@@ -53,7 +53,7 @@ cd ~
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AutoHotKey Main.lnk")
 $shortcut.TargetPath = "C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"
-$shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\main.ahk`""
+$shortcut.Arguments = "`"$env:USERPROFILE\.dotfiles\main.ahk`""
 $shortcut.Save()
 
 # Install Vivaldi
@@ -63,7 +63,7 @@ choco install Vivaldi -y
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Update Dotfiles.lnk")
 $shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\updatedotfiles.ps1`""
+$shortcut.Arguments = "`"$env:USERPROFILE\.dotfiles\scripts\updatedotfiles.ps1`""
 $shortcut.Save()
 
 # Install powertoys
@@ -131,5 +131,5 @@ choco install StartAllBack -y
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut(".\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Connect Pi.lnk")
 $shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "`"$env:USERPROFILE\dotfiles\scripts\AutoConnectPi.ps1`""
+$shortcut.Arguments = "`"$env:USERPROFILE\.dotfiles\scripts\AutoConnectPi.ps1`""
 $shortcut.Save()
