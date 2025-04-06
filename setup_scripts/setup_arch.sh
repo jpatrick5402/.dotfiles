@@ -17,10 +17,10 @@ sudo pacman -S fzf --noconfirm
 echo 'PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\n└─> "' >> ~/.bashrc
 
 # install print drivers
-cd
-git clone https://aur.archlinux.org/cnijfilter2.git
-cd cnijfilter2/
-makepkg -si --noconfirm
+#cd
+#git clone https://aur.archlinux.org/cnijfilter2.git
+#cd cnijfilter2/
+#makepkg -si --noconfirm
 
 # install audio resources
 sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
