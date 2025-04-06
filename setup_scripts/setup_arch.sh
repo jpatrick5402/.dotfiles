@@ -27,6 +27,9 @@ makepkg -si --noconfirm
 # install audio resources
 sudo pacman -S bluez pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
+# install clipboard manager
+sudo pacman -S copy1 --noconfirm
+
 # install i3 resources
 sudo pacman -S polybar picom --noconfirm
 
@@ -37,6 +40,8 @@ DOTFILES=(
  "polybar/config.ini"
  "i3/config"
 )
+mkdir ~/polybar/
+mkdir ~/i3/
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
