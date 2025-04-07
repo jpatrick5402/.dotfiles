@@ -15,9 +15,11 @@ if pacman -Qs yay > /dev/null; then
   echo "Yay is installed"
 else
   cd && git clone https://aur.archlinux.org/yay.git && cd yay
-  makepkg -si
+  makepkg -si --noconfirm
 fi
-PACKAGES=()
+PACKAGES=(
+  "zen-browser-bin"
+  )
 for package in "${PACKAGES[@]}"; do
   if pacman -Qs ${package} > /dev/null; then
     echo "${package} already installed"
