@@ -3,29 +3,34 @@ cd ${HOME}
 # update arch
 sudo pacman -Syu --noconfirm
 
-# install/config git
-sudo pacman -S git --noconfirm
+# install basic apps
+sudo pacman -S polybar picom feh git alacritty neovim base-devel fzf ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
 # add dotfiles (in case they're not already loaded
 git clone https://github.com/jpatrick5402/.dotfiles
 
-# install neovim
-sudo pacman -S neovim --noconfirm
-
-# install alacritty
-sudo pacman -S alacritty --noconfirm
-
-# install basic apps
-sudo pacman -S fzf ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+# install AUR packages
+# install yay first
+if pacman -Qs yay > /dev/null; then
+  echo "Yay is installed"
+else
+  cd && git clone https://aur.archlinux.org/yay.git && cd yay
+  makepkg -si
+fi
+PACKAGES=()
+for package in "${PACKAGES[@]}"; do
+  if pacman -Qs ${package} > /dev/null; then
+    echo "${package} already installed"
+  else
+    yay -S ${package} --noconfirm
+  fi
+done
 
 # install print drivers
 #cd
 #git clone https://aur.archlinux.org/cnijfilter2.git
 #cd cnijfilter2/
 #makepkg -si --noconfirm
-
-# install i3 resources
-sudo pacman -S polybar picom feh --noconfirm
 
 # create symlinks for dotfiles
 DIR=${HOME}/.dotfiles/nix_configs
