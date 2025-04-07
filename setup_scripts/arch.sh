@@ -12,6 +12,9 @@ git clone https://github.com/jpatrick5402/.dotfiles
 # install neovim
 sudo pacman -S neovim --noconfirm
 
+# install alacritty
+sudo pacman -S alacritty --noconfirm
+
 # install basic apps
 sudo pacman -S fzf ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
@@ -33,13 +36,16 @@ DOTFILES=(
  ".config/polybar/config.ini"
  ".config/i3/config"
  ".config/picom.conf"
+ ".config/alacritty/alacritty.toml"
 )
 mkdir ~/.config/
 mkdir ~/.config/polybar/
 mkdir ~/.config/i3/
+mkdir ~/.config/alacritty/
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
+# nvim separate due to sym link needed
 rm -rf ${HOME}/.config/nvim
 ln -sf "${HOME}/.dotfiles/nvim/" "${HOME}/.config/"
