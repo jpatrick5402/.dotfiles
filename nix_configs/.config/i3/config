@@ -194,6 +194,7 @@ exec polybar
 
 # specify gaps
 gaps inner 5
+#gaps outer 0
 
 # multi-media keys
 # Sreen brightness controls
