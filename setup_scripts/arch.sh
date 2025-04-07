@@ -9,6 +9,9 @@ sudo pacman -S git --noconfirm
 # add dotfiles (in case they're not already loaded
 git clone https://github.com/jpatrick5402/.dotfiles
 
+# install neovim
+sudo pacman -S neovim --noconfirm
+
 # install basic apps
 sudo pacman -S fzf ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
@@ -38,3 +41,5 @@ for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
+rm -rf ${HOME}/.config/nvim
+ln -sf "~/.dotfiles/nvim/" "~/.config/"
