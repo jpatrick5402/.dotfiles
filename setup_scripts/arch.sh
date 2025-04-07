@@ -10,7 +10,7 @@ sudo pacman -S git --noconfirm
 git clone https://github.com/jpatrick5402/.dotfiles
 
 # install basic apps
-sudo pacman -S fzf ttf-firacode-nerd firefox man copyq less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+sudo pacman -S fzf ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
 # install print drivers
 #cd
