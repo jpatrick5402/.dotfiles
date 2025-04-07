@@ -42,4 +42,4 @@ for dotfile in "${DOTFILES[@]}"; do
 	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
 rm -rf ${HOME}/.config/nvim
-ln -sf "~/.dotfiles/nvim/" "~/.config/"
+ln -sf "${HOME}/.dotfiles/nvim/" "${HOME}/.config/"
