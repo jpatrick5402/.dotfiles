@@ -55,4 +55,4 @@ for dotfile in "${DOTFILES[@]}"; do
 done
 # nvim separate due to sym link needed
 rm -rf ${HOME}/.config/nvim
-ln -sf "${HOME}/.dotfiles/nvim/" "${HOME}/.config/"
+ln -sf "${HOME}/.dotfiles/nvim/" "${HOME}/.config/nvim"
