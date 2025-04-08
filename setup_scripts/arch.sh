@@ -4,12 +4,12 @@ cd ${HOME}
 sudo pacman -Syu --noconfirm
 
 # install basic apps
-sudo pacman -S blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+sudo pacman -S zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
 # add dotfiles (in case they're not already loaded
 git clone https://github.com/jpatrick5402/.dotfiles
 
-# install AUR packages
+# install AUR packages (Way faster than all at once)
 # install yay first
 if pacman -Qs yay > /dev/null; then
   echo "Yay is installed"
@@ -56,3 +56,6 @@ done
 # nvim separate due to sym link needed
 rm -rf ${HOME}/.config/nvim
 ln -sf "${HOME}/.dotfiles/nvim/" "${HOME}/.config/nvim"
+
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
