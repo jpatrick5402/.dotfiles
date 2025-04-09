@@ -151,10 +151,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# workspace applications
-assign [class="zen"] $ws1
-assign [class="Alacritty"] $ws2
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -213,8 +209,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # startup apps
 exec picom --backend xrender
 exec_always feh --bg-scale ~/.dotfiles/pictures/mountain-red.jpg
-exec zen-browser
-exec $term
+exec --no-startup-id i3-msg 'workspace $ws2; exec alacritty'
+exec --no-startup-id i3-msg 'workspace $ws1; exec zen-browser'
 exec clipmenud
 
 for_window [class="^.*"] border pixel 0
