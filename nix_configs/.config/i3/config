@@ -192,8 +192,8 @@ bindsym $mod+Shift+l exec i3lock
 exec polybar
 
 # specify gaps
-#gaps inner 2
-#gaps outer 0
+# gaps inner 2
+gaps outer 0
 
 # multi-media keys
 # Sreen brightness controls
