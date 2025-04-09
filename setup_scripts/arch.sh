@@ -4,7 +4,7 @@ cd ${HOME}
 sudo pacman -Syu --noconfirm
 
 # install basic apps
-sudo pacman -S npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+sudo pacman -S rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man clipmenu less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
 # add dotfiles (in case they're not already loaded
 git clone https://github.com/jpatrick5402/.dotfiles
@@ -51,12 +51,14 @@ DOTFILES=(
  ".config/i3/config"
  ".config/picom.conf"
  ".config/alacritty/alacritty.toml"
+ ".config/rofi/config.rasi"
  ".zshrc"
 )
 mkdir ~/.config/
 mkdir ~/.config/polybar/
 mkdir ~/.config/i3/
 mkdir ~/.config/alacritty/
+mkdir ~/.config/rofi/
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
