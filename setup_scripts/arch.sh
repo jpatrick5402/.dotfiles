@@ -19,6 +19,7 @@ else
 fi
 PACKAGES=(
   "zen-browser-bin"
+  "visual-studio-code-bin"
   )
 for package in "${PACKAGES[@]}"; do
   if pacman -Qs ${package} > /dev/null; then
