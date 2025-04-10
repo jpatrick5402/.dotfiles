@@ -127,6 +127,8 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
     Run "wt.exe -Mf"
 }
 
+#+q::WinClose("A")
+
 ; hpath := EnvGet("USERPROFILE")
 ; ^!z::Run "C:\Program Files\Neovide\neovide.exe"
 ; ^!v::Run hpath . "\AppData\Local\Vivaldi\Application\vivaldi.exe"
