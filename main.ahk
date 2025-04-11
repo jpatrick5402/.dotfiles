@@ -84,7 +84,6 @@ Return
 */
 
 #Hotstring B  ; Turn back on automatic backspacing for all subsequent hotstrings.
-:?:ign::ing
 
 ;------------------------------------------------------------------------------
 ; Joseph Added
