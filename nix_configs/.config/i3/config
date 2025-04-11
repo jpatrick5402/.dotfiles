@@ -192,7 +192,7 @@ bindsym $mod+Shift+l exec i3lock
 exec polybar
 
 # specify gaps
-# gaps inner 2
+gaps inner 5
 gaps outer 0
 
 # multi-media keys
@@ -208,7 +208,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # startup apps
 exec picom --backend xrender
-exec_always feh --bg-scale ~/.dotfiles/pictures/mountain-red.jpg
+exec_always feh --bg-scale ~/.dotfiles/pictures/new-zealand.jpg
 exec --no-startup-id i3-msg 'workspace $ws2; exec alacritty'
 exec --no-startup-id i3-msg 'workspace $ws1; exec zen-browser'
 exec clipmenud
