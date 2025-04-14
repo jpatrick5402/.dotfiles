@@ -189,7 +189,8 @@ bindsym $mod+v exec clipmenu
 
 bindsym $mod+Shift+l exec i3lock
 
-exec polybar
+exec polybar main
+exec polybar secondary
 
 # specify gaps
 gaps inner 5
