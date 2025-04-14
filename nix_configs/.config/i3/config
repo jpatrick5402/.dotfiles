@@ -209,6 +209,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # startup apps
 exec picom --backend xrender
 exec_always feh --bg-scale ~/.dotfiles/pictures/new-zealand.jpg
+exec ~/.dotfiles/scripts/f_screen.sh
 exec --no-startup-id i3-msg 'workspace $ws2; exec alacritty'
 exec --no-startup-id i3-msg 'workspace $ws1; exec zen-browser'
 exec clipmenud
