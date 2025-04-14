@@ -4,7 +4,7 @@ cd ${HOME}
 sudo pacman -Syu --noconfirm
 
 # install basic apps
-sudo pacman -S ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
+sudo pacman -S zip unzip autorandr ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack --noconfirm
 
 # add dotfiles (in case they're not already loaded
 git clone https://github.com/jpatrick5402/.dotfiles
