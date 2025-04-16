@@ -7,7 +7,7 @@ cd ${HOME}
 sudo pacman -Syu --noconfirm
 
 # install basic apps
-sudo pacman -S playerctl libreoffice-still zip unzip ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils --noconfirm
+sudo pacman -S pipewire-pulse playerctl libreoffice-still zip unzip ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils --noconfirm
 
 # add dotfiles (in case they're not already loaded
 set +e
