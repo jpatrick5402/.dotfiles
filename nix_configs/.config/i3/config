@@ -207,7 +207,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # startup apps
-exec picom --backend xrender
+#exec picom --backend xrender 
 exec_always feh --bg-scale ~/.dotfiles/pictures/new-zealand.jpg
 exec ~/.dotfiles/scripts/f_screen.sh
 exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty'
