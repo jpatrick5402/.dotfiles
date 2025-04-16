@@ -43,10 +43,14 @@ done
 #makepkg -si --noconfirm
 
 # install oh my zsh
+set +e
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+set -e
 
 # adding zsh-suggestions
+set +e
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+set -e
 
 # create symlinks for dotfiles
 DIR=${HOME}/.dotfiles/nix_configs
@@ -61,11 +65,13 @@ DOTFILES=(
  ".config/rofi/config.rasi"
  ".zshrc"
 )
+set +e
 mkdir ~/.config/
 mkdir ~/.config/polybar/
 mkdir ~/.config/i3/
 mkdir ~/.config/alacritty/
 mkdir ~/.config/rofi/
+set -e
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
