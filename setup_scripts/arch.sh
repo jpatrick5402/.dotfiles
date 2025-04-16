@@ -36,11 +36,14 @@ for package in "${PACKAGES[@]}"; do
   fi
 done
 
-# install print drivers
+# install printer drivers
 #cd
 #git clone https://aur.archlinux.org/cnijfilter2.git
 #cd cnijfilter2/
 #makepkg -si --noconfirm
+
+# install sddm theme
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
 
 # install oh my zsh
 set +e
