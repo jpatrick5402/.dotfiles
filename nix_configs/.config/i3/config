@@ -214,4 +214,7 @@ exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty'
 exec --no-startup-id i3-msg 'workspace $ws2; exec zen-browser'
 exec clipmenud
 
+workspace 1 output primary
+workspace 2 output secondary
+
 for_window [class="^.*"] border pixel 0
