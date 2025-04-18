@@ -218,3 +218,5 @@ workspace 1 output primary
 workspace 2 output secondary
 
 for_window [class="^.*"] border pixel 0
+
+bindsym $mod+Shift+s exec maim --select ~/screenshots/$(date +%d.%m.%y-%H:%M:%S).png

@@ -7,7 +7,7 @@ cd ${HOME}
 sudo pacman -Syu --noconfirm
 
 # install basic apps
-sudo pacman -S pipewire-pulse playerctl libreoffice-still zip unzip ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils --noconfirm
+sudo pacman -S maim pipewire-pulse playerctl libreoffice-still zip unzip ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils --noconfirm
 
 # add dotfiles (in case they're not already loaded
 set +e
@@ -74,6 +74,7 @@ mkdir ~/.config/polybar/
 mkdir ~/.config/i3/
 mkdir ~/.config/alacritty/
 mkdir ~/.config/rofi/
+mkdir ~/screenshots/
 set -e
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
