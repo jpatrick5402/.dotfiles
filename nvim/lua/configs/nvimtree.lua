@@ -10,14 +10,12 @@ return {
     update_root = false,
   },
   view = {
-    width = 30,
     preserve_window_proportions = true,
-    side = "right"
   },
   renderer = {
     root_folder_label = false,
     highlight_git = true,
-    indent_markers = { enable = true },
+    indent_markers = { enable = false },
     icons = {
       glyphs = {
         default = "󰈚",
