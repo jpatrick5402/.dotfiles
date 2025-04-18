@@ -67,7 +67,6 @@ DOTFILES=(
  ".config/alacritty/alacritty.toml"
  ".config/rofi/config.rasi"
  ".zshrc"
- ".Xmodmap"
 )
 set +e
 mkdir ~/.config/
