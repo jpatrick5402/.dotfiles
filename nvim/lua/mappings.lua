@@ -10,3 +10,11 @@ vim.keymap.set("n", "<space>bp", "<cmd>BufferLinePick<CR>", {
 vim.keymap.set("n", ";", ":", {
 	desc = "command mode",
 })
+
+vim.keymap.set({ "n", "t" }, "<space>i", "<cmd>ToggleTerm size=40<CR>", {
+	desc = "toggle terminal",
+})
+
+vim.keymap.set("n", "<space>x", "<cmd>bdelete<CR>", {
+	desc = "close buffer",
+})
