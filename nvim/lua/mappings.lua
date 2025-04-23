@@ -15,6 +15,9 @@ vim.keymap.set({ "n", "t" }, "<space>i", "<cmd>ToggleTerm size=40<CR>", {
 	desc = "toggle terminal",
 })
 
-vim.keymap.set("n", "<space>x", "<cmd>bdelete<CR>", {
+vim.keymap.set("n", "<space>bx", "<cmd>bdelete<CR>", {
 	desc = "close buffer",
+})
+vim.keymap.set("n", "<space>bn", "<cmd>enew<CR>", {
+	desc = "new buffer",
 })
