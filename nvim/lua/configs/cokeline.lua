@@ -16,6 +16,22 @@ require("cokeline").setup({
 		bg = hl_attr("ColorColumn", "bg"),
 	},
 
+	sidebar = {
+		filetype = { "NvimTree", "neo-tree" },
+		components = {
+			{
+				text = function(buf)
+					return buf.filetype
+				end,
+				fg = yellow,
+				bg = function()
+					return get_hex("NvimTreeNormal", "bg")
+				end,
+				bold = true,
+			},
+		},
+	},
+
 	components = {
 		{
 			text = function(buffer)

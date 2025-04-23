@@ -17,6 +17,9 @@ vim.keymap.set("n", "<space>bn", "<cmd>enew<CR>", {
 vim.keymap.set("n", "<space>qa", "<cmd>qa<CR>", {
 	desc = "quit all",
 })
+vim.keymap.set("n", "<space>qq", "<cmd>qa<CR>", {
+	desc = "quit all",
+})
 vim.keymap.set("n", "<space>q", "<cmd>bdelete<CR>", {
 	desc = "quit current",
 })
