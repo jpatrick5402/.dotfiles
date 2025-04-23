@@ -9,7 +9,7 @@ require("nvim-tree").setup({
 	update_cwd = false,
 	view = {
 		width = 30,
-		side = "left",
+		side = "right",
 		preserve_window_proportions = false,
 		number = false,
 		relativenumber = false,
@@ -69,7 +69,7 @@ require("nvim-tree").setup({
 			restrict_above_cwd = false,
 		},
 		open_file = {
-			quit_on_open = false,
+			quit_on_open = true,
 			resize_window = false,
 			window_picker = {
 				enable = true,
