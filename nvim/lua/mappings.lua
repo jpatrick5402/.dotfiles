@@ -11,7 +11,7 @@ vim.keymap.set("n", ";", ":", {
 	desc = "command mode",
 })
 
-vim.keymap.set({ "n", "t" }, "<space>i", "<cmd>ToggleTerm size=40<CR>", {
+vim.keymap.set({ "n", "t" }, "<space>i", "<cmd>ToggleTerm size=20<CR>", {
 	desc = "toggle terminal",
 })
 
