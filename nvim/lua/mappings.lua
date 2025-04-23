@@ -21,3 +21,7 @@ vim.keymap.set("n", "<space>bx", "<cmd>bdelete<CR>", {
 vim.keymap.set("n", "<space>bn", "<cmd>enew<CR>", {
 	desc = "new buffer",
 })
+
+vim.keymap.set("n", "<space>qq", "<cmd>qa<CR>", {
+	desc = "quit all",
+})
