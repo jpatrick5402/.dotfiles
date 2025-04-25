@@ -1024,6 +1024,10 @@ require("lazy").setup({
 require("mappings")
 require("autocmds")
 
+require("notify").setup({
+	background_colour = "#000000",
+})
+
 vim.api.nvim_create_user_command("FormatDisable", function(args)
 	if args.bang then
 		-- FormatDisable! will disable formatting just for this buffer
