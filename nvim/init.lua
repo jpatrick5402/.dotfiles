@@ -979,7 +979,7 @@ require("lazy").setup({
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
 	--
 	-- require 'kickstart.plugins.debug',
-	-- require 'kickstart.plugins.indent_line',
+	require("kickstart.plugins.indent_line"),
 	-- require 'kickstart.plugins.lint',
 	-- require 'kickstart.plugins.autopairs',
 	-- require 'kickstart.plugins.neo-tree',
@@ -1024,8 +1024,11 @@ require("lazy").setup({
 require("mappings")
 require("autocmds")
 
+require("ibl").setup()
+
 require("notify").setup({
 	background_colour = "#000000",
+	top_down = false,
 })
 
 vim.api.nvim_create_user_command("FormatDisable", function(args)

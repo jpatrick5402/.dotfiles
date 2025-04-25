@@ -18,11 +18,14 @@ return {
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
+		config = function()
+			require("configs.onedarkpro")
+		end,
 	},
 
 	{
-		"xiyaowong/transparent.nvim",
-		lazy = false,
+		--		"xiyaowong/transparent.nvim",
+		--		lazy = false,
 	},
 
 	{
