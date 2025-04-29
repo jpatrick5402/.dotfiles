@@ -1024,7 +1024,12 @@ require("lazy").setup({
 require("mappings")
 require("autocmds")
 
-require("ibl").setup()
+require("ibl").setup({
+	indent = {
+		char = "▎",
+		tab_char = "▎",
+	},
+})
 
 require("notify").setup({
 	background_colour = "#000000",
