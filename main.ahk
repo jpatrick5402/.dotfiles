@@ -121,6 +121,9 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 :X:_ts::{
     Send FormatTime(A_Now, "MM/dd/yyy HH:mm:ss")
 }
+:X:_tds::{
+    Send FormatTime(A_Now, "MM/dd/yyy")
+}
 
 +#F23::{
     Run "wt.exe -Mf"
