@@ -1,18 +1,13 @@
 #!/bin/bash
 set -e
 
-cd ${HOME}
+cd ~
 
 # update arch
 sudo pacman -Syu --noconfirm
 
 # install basic apps
 sudo pacman -S maim pipewire-pulse playerctl libreoffice-still zip unzip ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils --noconfirm
-
-# add dotfiles (in case they're not already loaded
-set +e
-git clone https://github.com/jpatrick5402/.dotfiles
-set -e
 
 # install AUR packages (Way faster than all at once)
 # install yay first
@@ -23,27 +18,22 @@ else
   makepkg -si --noconfirm
   cd
 fi
-PACKAGES=(
-  "zen-browser-bin"
-  "visual-studio-code-bin"
-  "clipmenu-rofi"
-  )
-for package in "${PACKAGES[@]}"; do
-  if pacman -Qs ${package} > /dev/null; then
-    echo "${package} already installed"
-  else
-    yay -S ${package} --noconfirm
-  fi
-done
+yay -S visual-studio-code-bin clipmenu-rofi
 
 # install printer drivers
-#cd
-#git clone https://aur.archlinux.org/cnijfilter2.git
-#cd cnijfilter2/
-#makepkg -si --noconfirm
+read -p "Do you want to install printer drivers for your black printer? (y/n) " response
+if [[ "$var" == "y" || "$var" == "Y" ]]; then
+  cd
+  git clone https://aur.archlinux.org/cnijfilter2.git
+  cd cnijfilter2/
+  makepkg -si --noconfirm
+fi
 
 # install sddm theme
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+read -p "Do you want to install sddm-astronaut-theme? (y/n) " response
+if [[ "$var" == "y" || "$var" == "Y" ]]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+fi
 
 # install oh my zsh
 set +e
@@ -55,10 +45,10 @@ set +e
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 set -e
 
-# create symlinks for dotfiles
+# create symlinks for .dotfiles/nix_configs/
 cd ~/.dotfiles/nix_configs
 find . -maxdepth 1 | while read file; do ln -s ~/.dotfiles/nix_configs/$file ~/; done
 
-# nvim separate due to sym link needed
-rm -rf ${HOME}/.config/nvim
-ln -sf "${HOME}/.dotfiles/nvim/" "${HOME}/.config/nvim"
+# nvim separate due to location
+rm -rf ~/.config/nvim
+ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
