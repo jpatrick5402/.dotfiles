@@ -56,30 +56,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 set -e
 
 # create symlinks for dotfiles
-DIR=${HOME}/.dotfiles/nix_configs
-DOTFILES=(
- ".Xresources"
- ".gitconfig"
- ".bashrc"
- ".config/polybar/config.ini"
- ".config/i3/config"
- ".config/picom.conf"
- ".config/alacritty/alacritty.toml"
- ".config/rofi/config.rasi"
- ".zshrc"
-)
-set +e
-mkdir ~/.config/
-mkdir ~/.config/polybar/
-mkdir ~/.config/i3/
-mkdir ~/.config/alacritty/
-mkdir ~/.config/rofi/
-mkdir ~/screenshots/
-set -e
-for dotfile in "${DOTFILES[@]}"; do
-	rm -rf "${HOME}/${dotfile}"
-	ln -f "${DIR}/${dotfile}" "${HOME}/${dotfile}"
-done
+cd ~/.dotfiles/nix_configs
+find . -maxdepth 1 | while read file; do ln -s ~/.dotfiles/nix_configs/$file ~/; done
+
 # nvim separate due to sym link needed
 rm -rf ${HOME}/.config/nvim
 ln -sf "${HOME}/.dotfiles/nvim/" "${HOME}/.config/nvim"
