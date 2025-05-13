@@ -18,7 +18,6 @@ ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
 sudo pacman -S maim pipewire-pulse playerctl libreoffice-still zip unzip ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils --noconfirm
 
 # install AUR packages (Way faster than all at once)
-# install yay first
 if pacman -Qs yay > /dev/null; then
   echo "Yay is installed"
 else
@@ -26,7 +25,17 @@ else
   makepkg -si --noconfirm
   cd
 fi
-yay -S visual-studio-code-bin clipmenu-rofi
+PACKAGES=(
+  "visual-studio-code-bin"
+  "clipmenu-rofi"
+  )
+for package in "${PACKAGES[@]}"; do
+  if pacman -Qs ${package} > /dev/null; then
+    echo "${package} already installed"
+  else
+    yay -S ${package} --noconfirm
+  fi
+done
 
 # install printer drivers
 read -p "Do you want to install printer drivers for your black printer? (y/n) " response
