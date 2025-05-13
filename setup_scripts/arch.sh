@@ -6,6 +6,14 @@ cd ~
 # update arch
 sudo pacman -Syu --noconfirm
 
+# create symlinks for .dotfiles/nix_configs/
+cd ~/.dotfiles/nix_configs
+find . -maxdepth 1 | while read file; do ln -s ~/.dotfiles/nix_configs/$file ~/; done
+
+# nvim separate due to location
+rm -rf ~/.config/nvim
+ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
+
 # install basic apps
 sudo pacman -S maim pipewire-pulse playerctl libreoffice-still zip unzip ripgrep rofi npm zsh arandr blueman polybar picom feh git alacritty neovim base-devel fzf ttf-3270-nerd ttf-firacode-nerd firefox man less bluez bluez-utils --noconfirm
 
@@ -44,11 +52,3 @@ set -e
 set +e
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 set -e
-
-# create symlinks for .dotfiles/nix_configs/
-cd ~/.dotfiles/nix_configs
-find . -maxdepth 1 | while read file; do ln -s ~/.dotfiles/nix_configs/$file ~/; done
-
-# nvim separate due to location
-rm -rf ~/.config/nvim
-ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
