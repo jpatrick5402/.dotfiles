@@ -30,7 +30,7 @@ yay -S visual-studio-code-bin clipmenu-rofi
 
 # install printer drivers
 read -p "Do you want to install printer drivers for your black printer? (y/n) " response
-if [[ "$var" == "y" || "$var" == "Y" ]]; then
+if [[ "$response" == "y" || "$response" == "Y" ]]; then
   cd
   git clone https://aur.archlinux.org/cnijfilter2.git
   cd cnijfilter2/
@@ -39,7 +39,7 @@ fi
 
 # install sddm theme
 read -p "Do you want to install sddm-astronaut-theme? (y/n) " response
-if [[ "$var" == "y" || "$var" == "Y" ]]; then
+if [[ "$response" == "y" || "$response" == "Y" ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
 fi
 
