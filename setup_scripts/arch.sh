@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set +e
 
 cd ~
 
@@ -44,11 +44,7 @@ if [[ "$var" == "y" || "$var" == "Y" ]]; then
 fi
 
 # install oh my zsh
-set +e
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-set -e
 
 # adding zsh-suggestions
-set +e
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-set -e
