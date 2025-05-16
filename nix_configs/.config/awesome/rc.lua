@@ -49,11 +49,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -95,7 +96,8 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({
-    items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+    items = {
+        { "awesome",       myawesomemenu, beautiful.awesome_icon },
         { "open terminal", terminal }
     }
 })
@@ -156,6 +158,8 @@ local tasklist_buttons = gears.table.join(
         awful.client.focus.byidx(-1)
     end))
 
+beautiful.wallpaper = "/home/jpatrick5402/.dotfiles/pictures/cabin.png"
+
 local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
@@ -203,26 +207,26 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    --s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        {             -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+    --s.mywibox:setup {
+    --    layout = wibox.layout.align.horizontal,
+    --    { -- Left widgets
+    --        layout = wibox.layout.fixed.horizontal,
+    --        mylauncher,
+    --        s.mytaglist,
+    --        s.mypromptbox,
+    --    },
+    --    s.mytasklist, -- Middle widget
+    --    {             -- Right widgets
+    --        layout = wibox.layout.fixed.horizontal,
+    --        mykeyboardlayout,
+    --        wibox.widget.systray(),
+    --        mytextclock,
+    --        s.mylayoutbox,
+    --    },
+    --}
 end)
 -- }}}
 
@@ -331,6 +335,8 @@ globalkeys = gears.table.join(
         end,
         { description = "lua execute prompt", group = "awesome" }),
     -- Menubar
+    awful.key({ modkey }, "d", function() awful.spawn("rofi -show run") end,
+        { description = "show rofi run", group = "launcher" }),
     awful.key({ modkey }, "p", function() menubar.show() end,
         { description = "show the menubar", group = "launcher" })
 )
@@ -541,7 +547,7 @@ client.connect_signal("request::titlebars", function(c)
         end)
     )
 
-    awful.titlebar(c):setup {
+    awful.titlebar(c, { size = 25 }):setup {
         { -- Left
             awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
@@ -558,7 +564,7 @@ client.connect_signal("request::titlebars", function(c)
         { -- Right
             awful.titlebar.widget.floatingbutton(c),
             awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton(c),
+            --awful.titlebar.widget.stickybutton(c),
             awful.titlebar.widget.ontopbutton(c),
             awful.titlebar.widget.closebutton(c),
             layout = wibox.layout.fixed.horizontal()
@@ -576,6 +582,18 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Joseph added below
-awful.spawn.with_shell("xrandr --output DP-0 --primary --mode 2560x1440 --rate 165 --pos 1920x0")
-awful.spawn.with_shell("xrandr --output DP-2 --mode 1920x1080 --rate 165 --pos 0x180")
+-- autostart applications
+awful.spawn.once("numlockx on")
+awful.spawn.with_shell("sleep .5 && xrandr --output DP-0 --primary --mode 2560x1440 --rate 165 --pos 1920x0")
+awful.spawn.with_shell("sleep .5 && xrandr --output DP-2 --mode 1920x1080 --rate 165 --pos 0x180")
+awful.spawn.with_shell([[
+sleep 2;
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload example &
+  done
+else
+  polybar --reload example &
+fi
+]])
+awful.spawn.with_shell("sleep 2; picom")
