@@ -23,3 +23,6 @@ style = "Italic"
 [font.normal]
 family = "FiraCode Nerd Font"
 style = "Regular"
+
+[cursor.style]
+shape = "Beam"
