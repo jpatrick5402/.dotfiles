@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Power menu script using rofi
+
+CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown" | rofi -dmenu -i -p "Power Menu")
+
+case "$CHOSEN" in
+	"Lock") i3lock ;;
+	"Suspend") systemctl suspend-then-hibernate ;;
+	"Reboot") reboot ;;
+	"Shutdown") poweroff ;;
+	*) exit 1 ;;
+esac

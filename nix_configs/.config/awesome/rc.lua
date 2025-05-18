@@ -52,7 +52,9 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+--beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
+beautiful.useless_gap = 5
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -107,9 +109,31 @@ myawesomemenu = {
 	},
 }
 
+powermenu = {
+	{
+		"shutdown",
+		function()
+			awesome.spawn("shutdown now")
+		end,
+	},
+	{
+		"restart",
+		function()
+			awesome.spawn("restart")
+		end,
+	},
+	{
+		"lock",
+		function()
+			awesome.spawn("i3lock")
+		end,
+	},
+}
+
 mymainmenu = awful.menu({
 	items = {
 		{ "awesome", myawesomemenu, beautiful.awesome_icon },
+		{ "power", powermenu },
 		{ "open terminal", terminal },
 	},
 })
@@ -351,7 +375,6 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
-	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 	awful.key({ modkey }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
@@ -400,11 +423,43 @@ globalkeys = gears.table.join(
 	end, { description = "lua execute prompt", group = "awesome" }),
 	-- Menubar
 	awful.key({ modkey }, "d", function()
-		awful.spawn("rofi -show drun")
+		awful.spawn.with_shell("rofi -show drun")
 	end, { description = "show rofi run", group = "launcher" }),
 	awful.key({ modkey }, "p", function()
 		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	end, { description = "show the menubar", group = "launcher" }),
+	awful.key({ modkey, "Control" }, "x", function()
+		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-power")
+	end, { description = "show the power menu", group = "launcher" }),
+	awful.key({ modkey, "Control" }, "n", function()
+		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-network")
+	end, { description = "show the network menu", group = "launcher" }),
+	awful.key({ modkey }, "v", function()
+		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-clip")
+	end, { description = "show the clipboard history", group = "launcher" }),
+	awful.key({ modkey, "Shift" }, "s", function()
+		awful.spawn.with_shell("maim --select /home/jpatrick5402/screenshots/$(date +%d.%m.%y-%H:%M:%S).png")
+	end, { description = "screenshot", group = "launcher" }),
+
+	-- Multi-media keys
+	awful.key({}, "XF86AudioPlay", function()
+		awful.util.spawn("playerctl play-pause")
+	end),
+	awful.key({}, "XF86AudioNext", function()
+		awful.util.spawn("playerctl next")
+	end),
+	awful.key({}, "XF86AudioPrev", function()
+		awful.util.spawn("playerctl previous")
+	end),
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awful.util.spawn("playerctl volume")
+	end),
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awful.util.spawn("playerctl volume")
+	end),
+	awful.key({}, "XF86AudioMute", function()
+		awful.util.spawn("playerctl volume 0")
+	end)
 )
 
 clientkeys = gears.table.join(
@@ -413,6 +468,9 @@ clientkeys = gears.table.join(
 		c:raise()
 	end, { description = "toggle fullscreen", group = "client" }),
 	awful.key({ modkey, "Shift" }, "c", function(c)
+		c:kill()
+	end, { description = "close", group = "client" }),
+	awful.key({ modkey, "Shift" }, "q", function(c)
 		c:kill()
 	end, { description = "close", group = "client" }),
 	awful.key(
@@ -452,7 +510,7 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 4 do
 	globalkeys = gears.table.join(
 		globalkeys,
 		-- View tag only.
@@ -642,5 +700,6 @@ end)
 -- }}}
 
 -- autostart applications
-awful.spawn.once("numlockx on")
+awful.spawn.with_shell("numlockx on")
 awful.spawn.with_shell("picom")
+--awful.spawn.with_shell("clipmenud")
