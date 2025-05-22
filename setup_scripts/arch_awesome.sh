@@ -19,6 +19,7 @@ else
   cd && git clone https://aur.archlinux.org/yay.git && cd yay
   makepkg -si --noconfirm && cd
 fi
+rm -rf ~/yay/
 
 #install AUR packages
 PACKAGES=(
