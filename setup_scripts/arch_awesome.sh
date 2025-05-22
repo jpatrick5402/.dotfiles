@@ -11,7 +11,7 @@ ln -sf ~/.dotfiles/nvim/ ~/.config/
 sudo pacman -S playerctl btop zip unzip gcc ripgrep tree man numlockx neovim ttf-firacode-nerd base-devel --noconfirm
 
 #install config-specific packages
-sudo pacman -S maim dmenu zsh picom rofi --noconfirm
+sudo pacman -S zsh-syntax-highlighting maim dmenu zsh picom rofi --noconfirm
 
 #install yay
 if pacman -Qs yay > /dev/null; then echo "Yay is installed"
@@ -34,6 +34,3 @@ done
 
 #install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# adding zsh-suggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
