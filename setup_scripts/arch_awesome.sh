@@ -9,7 +9,7 @@ ln -sf ~/.dotfiles/nvim/ ~/.config/
 sudo pacman -S playerctl btop zip unzip gcc ripgrep tree man numlockx neovim ttf-firacode-nerd base-devel --noconfirm
 
 #install config-specific packages
-sudo pacman -S zsh-autosuggestions maim dmenu zsh picom rofi --noconfirm
+sudo pacman -S maim dmenu zsh picom rofi --noconfirm
 
 #install yay
 if pacman -Qs yay > /dev/null; then echo "Yay is installed"
