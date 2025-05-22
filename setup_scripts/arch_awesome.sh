@@ -24,6 +24,8 @@ rm -rf ~/yay/
 #install AUR packages
 PACKAGES=(
   "clipmenu-rofi"
+  "i3lock-color"
+  "xautolock"
   )
 for package in "${PACKAGES[@]}"; do
   if pacman -Qs ${package} > /dev/null; then
@@ -38,3 +40,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 #install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+#install zsh line
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
