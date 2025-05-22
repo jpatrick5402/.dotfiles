@@ -1,4 +1,6 @@
 #!/bin/bash
+cd ~
+
 #update system
 sudo pacman -Syu
 
