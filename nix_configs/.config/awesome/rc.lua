@@ -17,6 +17,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+-- Appmenu for applications on awesome menu
+local appmenu = require("appmenu")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -135,6 +137,7 @@ mymainmenu = awful.menu({
 		{ "awesome", myawesomemenu, beautiful.awesome_icon },
 		{ "power", powermenu },
 		{ "open terminal", terminal },
+		{ "applications", appmenu.Appmenu },
 	},
 })
 
@@ -197,7 +200,7 @@ local tasklist_buttons = gears.table.join(
 	end)
 )
 
-beautiful.wallpaper = "/home/jpatrick5402/.dotfiles/pictures/cabin.png"
+beautiful.wallpaper = "/home/jpatrick5402/.dotfiles/pictures/forest-blue.jpg"
 
 local function set_wallpaper(s)
 	-- Wallpaper
@@ -413,14 +416,15 @@ globalkeys = gears.table.join(
 		awful.screen.focused().mypromptbox:run()
 	end, { description = "run prompt", group = "launcher" }),
 
-	awful.key({ modkey }, "x", function()
-		awful.prompt.run({
-			prompt = "Run Lua code: ",
-			textbox = awful.screen.focused().mypromptbox.widget,
-			exe_callback = awful.util.eval,
-			history_path = awful.util.get_cache_dir() .. "/history_eval",
-		})
-	end, { description = "lua execute prompt", group = "awesome" }),
+	--awful.key({ modkey }, "x", function()
+	--	awful.prompt.run({
+	--		prompt = "Run Lua code: ",
+	--		textbox = awful.screen.focused().mypromptbox.widget,
+	--		exe_callback = awful.util.eval,
+	--		history_path = awful.util.get_cache_dir() .. "/history_eval",
+	--	})
+	--end, { description = "lua execute prompt", group = "awesome" }),
+
 	-- Menubar
 	awful.key({ modkey }, "d", function()
 		awful.spawn.with_shell("rofi -show drun")
@@ -428,8 +432,11 @@ globalkeys = gears.table.join(
 	awful.key({ modkey }, "p", function()
 		menubar.show()
 	end, { description = "show the menubar", group = "launcher" }),
-	awful.key({ modkey, "Control" }, "x", function()
+	awful.key({ modkey }, "x", function()
 		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-power")
+	end, { description = "show the power menu", group = "launcher" }),
+	awful.key({ modkey, "Control" }, "l", function()
+		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/lock.sh")
 	end, { description = "show the power menu", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "n", function()
 		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-network")
@@ -700,6 +707,5 @@ end)
 -- }}}
 
 -- autostart applications
-awful.spawn.with_shell("numlockx on")
 awful.spawn.with_shell("picom")
---awful.spawn.with_shell("clipmenud")
+awful.spawn.with_shell("clipmenud")
