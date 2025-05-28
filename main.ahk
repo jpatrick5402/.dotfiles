@@ -126,7 +126,7 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 }
 
 +#F23::{
-    Run "wt.exe -Mf"
+    Run "wt.exe"
 }
 
 #+q::WinClose("A")
