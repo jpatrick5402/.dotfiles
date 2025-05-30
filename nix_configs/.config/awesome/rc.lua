@@ -19,6 +19,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 -- Appmenu for applications on awesome menu
 local appmenu = require("appmenu")
+local switcher = require("awesome-switcher")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -429,6 +430,9 @@ globalkeys = gears.table.join(
 	awful.key({ modkey }, "d", function()
 		awful.spawn.with_shell("rofi -show drun")
 	end, { description = "show rofi run", group = "launcher" }),
+	awful.key({ modkey }, "\\", function()
+		awful.spawn.with_shell("zen-browser")
+	end, { description = "open zen", group = "launcher" }),
 	awful.key({ modkey }, "p", function()
 		menubar.show()
 	end, { description = "show the menubar", group = "launcher" }),
@@ -466,6 +470,15 @@ globalkeys = gears.table.join(
 	end),
 	awful.key({}, "XF86AudioMute", function()
 		awful.util.spawn("playerctl volume 0")
+	end),
+
+	-- Switcher keys
+	awful.key({ "Mod1" }, "Tab", function()
+		switcher.switch(1, "Mod1", "Alt_L", "Shift", "Tab")
+	end),
+
+	awful.key({ "Mod1", "Shift" }, "Tab", function()
+		switcher.switch(-1, "Mod1", "Alt_L", "Shift", "Tab")
 	end)
 )
 
