@@ -20,6 +20,7 @@ require("awful.hotkeys_popup.keys")
 -- Appmenu for applications on awesome menu
 local appmenu = require("appmenu")
 local switcher = require("awesome-switcher")
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -317,7 +318,9 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			mykeyboardlayout,
+			volume_widget({
+				widget_type = "arc",
+			}),
 			wibox.widget.systray(),
 			mytextclock,
 			s.mylayoutbox,
@@ -463,13 +466,13 @@ globalkeys = gears.table.join(
 		awful.util.spawn("playerctl previous")
 	end),
 	awful.key({}, "XF86AudioRaiseVolume", function()
-		awful.util.spawn("playerctl volume")
+		awful.util.spawn("amixer set Master 5%+")
 	end),
 	awful.key({}, "XF86AudioLowerVolume", function()
-		awful.util.spawn("playerctl volume")
+		awful.util.spawn("amixer set Master 5%-")
 	end),
 	awful.key({}, "XF86AudioMute", function()
-		awful.util.spawn("playerctl volume 0")
+		awful.util.spawn("amixer set Master toggle")
 	end),
 
 	-- Switcher keys
