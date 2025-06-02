@@ -21,6 +21,7 @@ require("awful.hotkeys_popup.keys")
 local appmenu = require("appmenu")
 local switcher = require("awesome-switcher")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -55,10 +56,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
---beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
---beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
-beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
-beautiful.useless_gap = 5
+beautiful.init(gears.filesystem.get_configuration_dir() .. "zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -157,7 +155,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock("%Y-%m-%d %H:%M:%S", 1)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -201,8 +199,6 @@ local tasklist_buttons = gears.table.join(
 		awful.client.focus.byidx(-1)
 	end)
 )
-
-beautiful.wallpaper = "/home/jpatrick5402/.dotfiles/pictures/forest-blue.jpg"
 
 local function set_wallpaper(s)
 	-- Wallpaper
@@ -260,22 +256,12 @@ awful.screen.connect_for_each_screen(function(s)
 		filter = awful.widget.tasklist.filter.currenttags,
 		buttons = tasklist_buttons,
 		style = {
-			shape_border_width = 1,
+			shape_border_width = 2,
 			shape_border_color = "#777777",
 			shape = gears.shape.rounded_bar,
 		},
 		layout = {
-			spacing = 10,
-			spacing_widget = {
-				{
-					forced_width = 5,
-					shape = gears.shape.circle,
-					widget = wibox.widget.separator,
-				},
-				valign = "center",
-				halign = "center",
-				widget = wibox.container.place,
-			},
+			spacing = 5,
 			layout = wibox.layout.fixed.horizontal,
 		},
 		-- Notice that there is *NO* wibox.wibox prefix, it is a template,
@@ -304,7 +290,7 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mywibox = awful.wibar({ position = "top", screen = s, height = 25 })
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({
@@ -315,14 +301,22 @@ awful.screen.connect_for_each_screen(function(s)
 			s.mytaglist,
 			s.mypromptbox,
 		},
-		s.mytasklist, -- Middle widget
+		{ -- Middle widget
+			layout = wibox.layout.align.horizontal,
+			expand = "outside",
+			s.mytasklist,
+			mytextclock,
+		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			wibox.widget.systray(),
 			volume_widget({
 				widget_type = "arc",
 			}),
-			wibox.widget.systray(),
-			mytextclock,
+			battery_widget({
+				show_current_level = true,
+				arc_thickness = 1,
+			}),
 			s.mylayoutbox,
 		},
 	})
@@ -683,9 +677,8 @@ client.connect_signal("request::titlebars", function(c)
 		end)
 	)
 
-	awful.titlebar(c, { size = 25 }):setup({
+	awful.titlebar(c, { size = 20 }):setup({
 		{ -- Left
-			awful.titlebar.widget.iconwidget(c),
 			buttons = buttons,
 			layout = wibox.layout.fixed.horizontal,
 		},
