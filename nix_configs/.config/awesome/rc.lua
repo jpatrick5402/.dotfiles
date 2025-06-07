@@ -446,7 +446,8 @@ globalkeys = gears.table.join(
 		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-clip")
 	end, { description = "show the clipboard history", group = "launcher" }),
 	awful.key({ modkey, "Shift" }, "s", function()
-		awful.spawn.with_shell("maim --select /home/jpatrick5402/screenshots/$(date +%d.%m.%y-%H:%M:%S).png")
+		--awful.spawn.with_shell("maim --select /home/jpatrick5402/screenshots/$(date +%d.%m.%y-%H:%M:%S).png")
+		awful.spawn.with_shell("maim -s | xclip -selection clipboard -t image/png")
 	end, { description = "screenshot", group = "launcher" }),
 
 	-- Multi-media keys

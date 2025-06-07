@@ -14,7 +14,7 @@ sudo pacman -S bc playerctl btop zip unzip gcc ripgrep tree man numlockx neovim 
 echo '\033[1;32mBasic packages are installed'
 
 #install config-specific packages
-sudo pacman -S zsh-syntax-highlighting maim dmenu zsh picom rofi --noconfirm
+sudo pacman -S xclip zsh-syntax-highlighting maim dmenu zsh picom rofi --noconfirm
 echo "\033[1;32mConfig packages are installed"
 
 #install yay
