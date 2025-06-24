@@ -113,7 +113,10 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
     Send WorkSignature
 }
 :X:_ack::{
-    Send "Hello XXXXXXXXX, would you be able to acknowledge XXXXXXXXX? XXXXXXXXX"
+    Send "Hello XXXXXXXXX, would you be able to acknowledge XXXXXXXXX?"
+}
+:X:_ackb::{
+    Send "Acknowledging on behalf of XXXXXXXXX per KB0013295"
 }
 :O:unk::Unknown
 :O:_unable::Unable to contact customer after 3 attempts, closing ticket per KB0010438
