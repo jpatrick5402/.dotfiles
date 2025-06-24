@@ -72,7 +72,8 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-	awful.layout.suit.tile,
+	-- awful.layout.suit.tile,
+	awful.layout.suit.spiral.dwindle,
 	awful.layout.suit.floating,
 	-- awful.layout.suit.tile.left,
 	-- awful.layout.suit.tile.bottom,
@@ -80,7 +81,6 @@ awful.layout.layouts = {
 	-- awful.layout.suit.fair,
 	-- awful.layout.suit.fair.horizontal,
 	-- awful.layout.suit.spiral,
-	-- awful.layout.suit.spiral.dwindle,
 	-- awful.layout.suit.max,
 	-- awful.layout.suit.max.fullscreen,
 	-- awful.layout.suit.magnifier,
@@ -121,7 +121,7 @@ powermenu = {
 	{
 		"restart",
 		function()
-			awesome.spawn("restart")
+			awesome.spawn("reboot")
 		end,
 	},
 	{
@@ -438,7 +438,7 @@ globalkeys = gears.table.join(
 	end, { description = "show the power menu", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "l", function()
 		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/lock.sh")
-	end, { description = "show the power menu", group = "launcher" }),
+	end, { description = "lock computer", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "n", function()
 		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-network")
 	end, { description = "show the network menu", group = "launcher" }),
@@ -719,3 +719,4 @@ end)
 -- autostart applications
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("clipmenud")
+awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/lock.sh")

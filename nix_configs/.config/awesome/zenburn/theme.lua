@@ -8,7 +8,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = "/home/jpatrick5402/.dotfiles/pictures/cabin.png"
+theme.wallpaper = "/home/jpatrick5402/.dotfiles/pictures/mountain-red.jpg"
 
 -- }}}
 
