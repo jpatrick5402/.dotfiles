@@ -437,7 +437,7 @@ globalkeys = gears.table.join(
 		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-power")
 	end, { description = "show the power menu", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "l", function()
-		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/lock.sh")
+		awful.spawn.with_shell("slock")
 	end, { description = "lock computer", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "n", function()
 		awful.spawn.with_shell("/home/jpatrick5402/.dotfiles/scripts/rofi-network")
