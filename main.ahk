@@ -113,7 +113,13 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
     Send WorkSignature
 }
 :X:_ack::{
-    Send "Hello XXXXXXXXX, would you be able to acknowledge XXXXXXXXX? XXXXXXXXX"
+    Send "Hello XXXXXXXXX, would you be able to acknowledge XXXXXXXXX?"
+}
+:X:_ackb::{
+    Send "Acknowledging on behalf of XXXXXXXXX per KB0013295"
+}
+:X:_dark::{
+    Send "Please update the text-color of the article to 'Remove Color' so that this is accessible in both ServiceNow dark and light mode."
 }
 :O:unk::Unknown
 :O:_unable::Unable to contact customer after 3 attempts, closing ticket per KB0010438
