@@ -88,4 +88,7 @@ return {
             require('alpha').setup(require('alpha.themes.startify').config)
         end,
     },
+    {
+        'HiPhish/rainbow-delimiters.nvim',
+    },
 }
