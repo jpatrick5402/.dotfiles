@@ -4,7 +4,7 @@
 
 ;------------------------------------------------------------------------------
 ; CHANGELOG:
-; 
+;
 ; Sep 13 2007: Added more misspellings.
 ;              Added fix for -ign -> -ing that ignores words like "sign".
 ;              Added word beginnings/endings sections to cover more options.
@@ -12,30 +12,30 @@
 ; Feb 28 2007: Added other common misspellings based on MS Word AutoCorrect.
 ;              Added optional auto-correction of 2 consecutive capital letters.
 ; Sep 24 2006: Initial release by Jim Biancolo (http://www.biancolo.com)
-; 
+;
 ; INTRODUCTION
-; 
+;
 ; This is an AutoHotKey script that implements AutoCorrect against several
 ; "Lists of common misspellings":
-; 
+;
 ; This does not replace a proper spellchecker such as in Firefox, Word, etc.
 ; It is usually better to have uncertain typos highlighted by a spellchecker
 ; than to "correct" them incorrectly so that they are no longer even caught by
 ; a spellchecker: it is not the job of an autocorrector to correct *all*
 ; misspellings, but only those which are very obviously incorrect.
-; 
+;
 ; From a suggestion by Tara Gibb, you can add your own corrections to any
 ; highlighted word by hitting Win+H. These will be added to a separate file,
 ; so that you can safely update this file without overwriting your changes.
-; 
+;
 ; Some entries have more than one possible resolution (achive->achieve/archive)
 ; or are clearly a matter of deliberate personal writing style (wanna, colour)
-; 
+;
 ; These have been placed at the end of this file and commented out, so you can
 ; easily edit and add them back in as you like, tailored to your preferences.
-; 
+;
 ; SOURCES
-; 
+;
 ; http://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings
 ; http://en.wikipedia.org/wiki/Wikipedia:Typo
 ; Microsoft Office autocorrect list
@@ -43,9 +43,9 @@
 ; OpenOffice autocorrect list
 ; TextTrust press release
 ; User suggestions.
-; 
+;
 ; CONTENTS
-; 
+;
 ;   Settings
 ;   AUto-COrrect TWo COnsecutive CApitals (commented out by default)
 ;   Win+H code
@@ -91,51 +91,57 @@ Return
 
 ; Personal stuff
 PersonalSignature := "Joseph Patrick`r(409) 344-1823"
-:X:_sig::Send PersonalSignature
+:X:_sig:: Send PersonalSignature
 
 ; Work stuff
-WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology and Infrastructure`rInformation Systems Division (ISD)`rUniversity of Rochester Medical Center`r(585) 275-3200"
-:X:_wsig::Send WorkSignature
-:X:_wqsig::{
+WorkSignature :=
+    "Joseph Patrick`rService Desk Support Tech III – Technology and Infrastructure`rInformation Systems Division (ISD)`rUniversity of Rochester Medical Center`r(585) 275-3200"
+:X:_wsig:: Send WorkSignature
+:X:_wqsig:: {
     Send "`rIf you have any questions or need assistance, please call us at (585) 275-3200.`r`r"
     Send WorkSignature
 }
-:X:_wstill::{
+:X:_align:: {
+    SEND "Aligned Licensing to A3 via HDAMU`r"
+    Send "`rIf you have any questions or need assistance, please call us at (585) 275-3200.`r`r"
+    Send WorkSignature
+}
+:X:_wstill:: {
     Send "Hello XXXXXXXXX,`rIs this issue still occurring?`rIf you have any questions or need assistance, please call us at (585) 275-3200.`r`r"
     Send WorkSignature
 }
-:X:_w2::{
+:X:_w2:: {
     Send "Hello XXXXXXXXX,`rI've not been able to reach you after my last contact.`rDo you still need assistance with this issue?`r`rIf you have any questions or need assistance, please call us at (585) 275-3200`r`r"
     Send WorkSignature
 }
-:X:_w3::{
+:X:_w3:: {
     Send "Hello XXXXXXXXX,`rThis email is to inform you that the Help Desk has attempted to contact you without success by phone or email on the last two business days regarding the above ticket`rSince we were unable to reach you as of today, at the end of this business day we will close your ticket. If you would like this ticket to remain active, please contact us at (585) 275-3200 and reference the ticket number above.`r`r"
     Send WorkSignature
 }
-:X:_ack::{
+:X:_ack:: {
     Send "Hello XXXXXXXXX, would you be able to acknowledge XXXXXXXXX?"
 }
-:X:_ackb::{
+:X:_ackb:: {
     Send "Acknowledging on behalf of XXXXXXXXX per KB0013295"
 }
-:X:_dark::{
+:X:_dark:: {
     Send "Please update the text-color of the article to 'Remove Color' so that this is accessible in both ServiceNow dark and light mode."
 }
 :O:unk::Unknown
 :O:_unable::Unable to contact customer after 3 attempts, closing ticket per KB0010438
 
-:X:_ts::{
+:X:_ts:: {
     Send FormatTime(A_Now, "MM/dd/yyy HH:mm:ss")
 }
-:X:_tds::{
+:X:_tds:: {
     Send FormatTime(A_Now, "MM/dd/yyy")
 }
 
-+#F23::{
++#F23:: {
     Run "wt.exe"
 }
 
-#+q::WinClose("A")
+#+q:: WinClose("A")
 
 ; hpath := EnvGet("USERPROFILE")
 ; ^!z::Run "C:\Program Files\Neovide\neovide.exe"
@@ -161,7 +167,6 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 :?:sice::sive
 :?:t eh:: the
 :?:t hem:: them
-
 
 ;------------------------------------------------------------------------------
 ; Word beginnings
@@ -250,19 +255,17 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 :*:superceed::supersede
 :*:weild::wield
 
-
 ;------------------------------------------------------------------------------
 ; Word middles
 ;------------------------------------------------------------------------------
 :?*:compatab::compatib  ; Covers incompat* and compat*
 :?*:catagor::categor  ; Covers subcatagories and catagories.
 
-
 ;------------------------------------------------------------------------------
 ; Accented English words, from, amongst others,
 ; http://en.wikipedia.org/wiki/List_of_English_words_with_diacritics
 ; I have included all the ones compatible with reasonable codepages, and placed
-; those that may often not be accented either from a clash with an unaccented 
+; those that may often not be accented either from a clash with an unaccented
 ; word (resume), or because the unaccented version is now common (cafe).
 ;------------------------------------------------------------------------------
 ::aesop::Æsop
@@ -551,7 +554,7 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 ::vins rose::vins rosé
 ::vis a vis::vis à vis
 ::vis-a-vis::vis-à-vis
-::voila::voilà 
+::voila::voilà
 
 ;------------------------------------------------------------------------------
 ; Common Misspellings - the main list
@@ -5236,7 +5239,7 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 ::thursday::Thursday
 ::friday::Friday
 ::saturday::Saturday
-::sunday::Sunday 
+::sunday::Sunday
 
 ::january::January
 ::february::February
@@ -5250,7 +5253,6 @@ WorkSignature := "Joseph Patrick`rService Desk Support Tech III – Technology a
 ::october::October
 ::november::November
 ::december::December
-
 
 ;-------------------------------------------------------------------------------
 ; Anything below this point was added to the script by the user via the Win+H hotkey.
