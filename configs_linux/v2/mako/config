@@ -1,0 +1,26 @@
+# Global Configuration Options
+max-history=10
+sort=-time
+default-timeout=5000
+
+# Style Options
+font=sans-serif 10
+background-color=#282828
+text-color=#ebdbb2
+border-size=1
+border-color=#458588
+padding=5
+width=300
+height=100
+margin=10
+
+# Binding Options
+on-button-left=invoke-default-action
+on-button-right=dismiss
+on-notify=exec play-sound.sh "${id}" # Example: Play a sound on new notification
+
+# Category-specific settings (example for critical notifications)
+[category=critical]
+background-color=#cc241d
+text-color=#fbf1c7
+border-color=#fb4934

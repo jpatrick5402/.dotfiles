@@ -1,0 +1,38 @@
+window {
+    background-color: #282a36; /* Dark background */
+    border: 1px solid #6272a4; /* Accent border */
+    border-radius: 8px;
+}
+
+#input {
+    background-color: #44475a; /* Slightly lighter dark for input */
+    color: #f8f8f2; /* Light text color */
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 5px;
+}
+
+#outer-box {
+    margin: 10px;
+}
+
+#scroll {
+    margin-top: 5px;
+}
+
+#entry {
+    padding: 8px;
+    margin: 2px 0;
+    color: #f8f8f2; /* Light text color */
+}
+
+#entry:selected {
+    background-color: #6272a4; /* Accent color for selected item */
+    color: #f8f8f2;
+    border-radius: 4px;
+}
+
+#text {
+    margin-left: 5px;
+}
