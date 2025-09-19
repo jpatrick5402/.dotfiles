@@ -31,11 +31,7 @@
 
     // Module definitions
     "hyprland/workspaces": {
-        "format": "<span>{icon}</span>",
-        "format-icons": {
-            "default": "",
-            "active": ""
-        },
+        "format": "{name}",
         "on-click": "activate"
     },
     

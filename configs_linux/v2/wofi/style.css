@@ -1,38 +1,51 @@
 window {
-    background-color: #282a36; /* Dark background */
-    border: 1px solid #6272a4; /* Accent border */
-    border-radius: 8px;
+margin: 0px;
+border: 1px solid #bd93f9;
+background-color: #282a36;
 }
 
 #input {
-    background-color: #44475a; /* Slightly lighter dark for input */
-    color: #f8f8f2; /* Light text color */
-    border: none;
-    border-radius: 4px;
-    padding: 8px;
-    margin: 5px;
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: #44475a;
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+background-color: #282a36;
 }
 
 #outer-box {
-    margin: 10px;
+margin: 5px;
+border: none;
+background-color: #282a36;
 }
 
 #scroll {
-    margin-top: 5px;
-}
-
-#entry {
-    padding: 8px;
-    margin: 2px 0;
-    color: #f8f8f2; /* Light text color */
-}
-
-#entry:selected {
-    background-color: #6272a4; /* Accent color for selected item */
-    color: #f8f8f2;
-    border-radius: 4px;
+margin: 0px;
+border: none;
 }
 
 #text {
-    margin-left: 5px;
+margin: 5px;
+border: none;
+color: #f8f8f2;
+} 
+
+#entry.activatable #text {
+color: #282a36;
+}
+
+#entry > * {
+color: #f8f8f2;
+}
+
+#entry:selected {
+background-color: #44475a;
+}
+
+#entry:selected #text {
+font-weight: bold;
 }
