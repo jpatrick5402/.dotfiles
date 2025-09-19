@@ -17,11 +17,9 @@
     ],
     "modules-center": [
         "custom/launcher",
-        "custom/quicklinks"
     ],
     "modules-right": [
         "tray",
-        "custom/gpu-temp",
         "cpu",
         "memory",
         "disk",
@@ -46,16 +44,10 @@
     },
     
     "custom/launcher": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "wcm-app-menu" // Or your preferred app launcher command
-    },
-    
-    "custom/quicklinks": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "~/.config/ml4w/settings/waybar-quicklinks.json", // This is where the magic happens
-        "on-click": "open_link"
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "Applications",
+        "on-click": "wofi" // Or your preferred app launcher command
     },
     
     "tray": {
@@ -65,16 +57,14 @@
 
     "cpu": {
         "format": " {usage}%",
-        "tooltip": false
     },
     
     "memory": {
         "format": "󰍛 {}%",
-        "tooltip": false
     },
     
     "disk": {
-        "format": "󰋊 {percentage_free}%",
+        "format": "󰋊 {percentage_used}%",
         "tooltip": true,
         "path": "/"
     },
@@ -95,7 +85,7 @@
         "format-icons": {
             "default": ""
         },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     },
@@ -114,7 +104,7 @@
     },
     
     "clock": {
-        "format": "󰃰  {:%a %b %d %H:%M}",
-        "tooltip-format": "<big>{:%Y %B %d}</big>\n<small>{:%H:%M}</small>"
+        "format": "󰃰 {:%a %b %d %H:%M}",
+        "tooltip-format": "{:%Y %B %d %H:%M}"
     }
 }
