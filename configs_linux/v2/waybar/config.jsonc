@@ -6,7 +6,7 @@
     "passthrough": false,
     "height": 40,
     "margin-top": 5,
-    "margin-bottom": 5,
+    "margin-bottom": 0,
     "margin-left": 5,
     "margin-right": 5,
     "spacing": 10,
