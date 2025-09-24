@@ -7,4 +7,4 @@ height=40%
 width=30%
 location=center
 # Use the dark variant of the GTK theme if available
-gtk-dark=true
+gtk_dark=true

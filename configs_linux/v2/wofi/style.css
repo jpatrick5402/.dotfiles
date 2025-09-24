@@ -1,54 +1,53 @@
 window {
-	margin: 0px;
-	border: 1px solid #00bfff;
-	background: none;
-	border-radius: 10px;
-    font-family: "FiraCode Nerd Font Mono";
+margin: 0px;
+border: 1px solid #00bfff;
+background: none;
+border-radius: 10px;
+font-family: "FiraCode Nerd Font Mono";
 }
 
 #input {
-	margin: 5px;
-	border: none;
-	color: #f8f8f2;
-	background-color: #44475a;
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: #44475a;
 }
 
 #inner-box {
-	margin: 5px;
-	border: none;
-	background-color: #282a36;
+margin: 5px;
+border: none;
+background-color: #282a36;
 }
 
 #outer-box {
-	margin: 1px;
-	border: none;
-	background-color: #282a36;
-	border-radius: 10px;
+margin: 1px;
+border: none;
+background-color: #282a36;
+border-radius: 10px;
 }
 
 #scroll {
-	margin: 0px;
-	border: none;
+margin: 0px;
+border: none;
 }
 
 #text {
-	margin: 5px;
-	border: none;
-	color: #f8f8f2;
+margin: 5px;
+border: none;
 } 
 
 #entry.activatable #text {
-	color: #282a36;
+color: #FFFFFF;
 }
 
 #entry > * {
-	color: #f8f8f2;
+color: #f8f8f2;
 }
 
 #entry:selected {
-	background-color: #44475a;
+background-color: #44475a;
 }
 
 #entry:selected #text {
-	font-weight: bold;
+font-weight: bold;
 }

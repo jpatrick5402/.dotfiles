@@ -26,7 +26,8 @@
         "network",
         "pulseaudio",
         "battery",
-        "clock"
+        "clock",
+        "custom/notifications"
     ],
 
     // Module definitions
@@ -53,16 +54,19 @@
 
     "cpu": {
         "format": " {usage}%",
+        "on-click": "hyprctl -q dispatch exec kitty btop",
     },
     
     "memory": {
         "format": "󰍛 {}%",
+        "on-click": "hyprctl -q dispatch exec kitty btop",
     },
     
     "disk": {
         "format": "󰋊 {percentage_used}%",
         "tooltip": true,
-        "path": "/"
+        "path": "/",
+        "on-click": "baobab",
     },
     
     "network": {
@@ -102,5 +106,12 @@
     "clock": {
         "format": "󰃰 {:%a %b %d %H:%M}",
         "tooltip-format": "{:%Y %B %d %H:%M}"
+    },
+    
+    "custom/notifications": {
+        "format": " ",
+        "tooltip": true,
+        "tooltip-format": "notifications",
+        "on-click": "makoctl history | awk '/^Notification/{if (NR!=1) print \"\"; printf \"%s\", $0; next} /App name:/{printf \"\t%s\", $0; next} /Urgency:/{printf \"\t%s\", $0} END {print \"\"}' | wofi --dmenu -i -p \"Notification History\" | wl-copy",
     }
 }
