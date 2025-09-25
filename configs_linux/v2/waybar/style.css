@@ -33,11 +33,10 @@ window#waybar {
     color: #cdd6f4;
 }
 
-
 #workspaces button {
     background-color: transparent;
     color: #cdd6f4;
-    border-radius: 0;
+    border-radius: 8px;
     margin: 4px;
 }
 
@@ -48,13 +47,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #fab387;
+    background-color: #04A7A5;
     color: #1e1e2e;
     border-radius: 8px;
 }
 
 #workspaces button.active:hover {
-    background-color: #fab387;
+    color: #cdd6f4;
+    background-color: transparent;
 }
 
 /* Specific module tweaks */
