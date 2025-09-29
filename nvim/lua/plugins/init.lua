@@ -3,6 +3,9 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+    {
+        'nvim-neo-tree/neo-tree.nvim',
+    },
 
     {
         'neanias/everforest-nvim',
@@ -29,12 +32,6 @@ return {
     },
 
     {
-        'nvim-tree/nvim-web-devicons',
-        opts = {},
-        lazy = false,
-    },
-
-    {
         'akinsho/toggleterm.nvim',
         version = '*',
         opts = function()
@@ -46,23 +43,10 @@ return {
         'willothy/nvim-cokeline',
         dependencies = {
             'nvim-lua/plenary.nvim', -- Required for v0.4.0+
-            'nvim-tree/nvim-web-devicons', -- If you want devicons
             'stevearc/resession.nvim', -- Optional, for persistent history
         },
         config = function()
             require 'configs.cokeline'
-        end,
-    },
-
-    {
-        'nvim-tree/nvim-tree.lua',
-        version = '*',
-        lazy = false,
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
-        config = function()
-            require 'configs.nvim-tree'
         end,
     },
 
