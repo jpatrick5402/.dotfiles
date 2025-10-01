@@ -20,6 +20,7 @@ return {
                 hide_git_ignored = false,
             },
             hijack_netrw_behavior = 'open_current',
+            bind_to_cwd = true, -- Ensure this is true for Neo-tree to follow the working directory
             window = {
                 mappings = {
                     ['\\'] = 'close_window',
