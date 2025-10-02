@@ -1,7 +1,9 @@
 vim.keymap.set('n', ';', ':', {
     desc = 'command mode',
 })
-
+vim.keymap.set('n', '<C-x>', '<cmd>wa<CR><cmd>qa<CR>', {
+    desc = 'close buffer',
+})
 vim.keymap.set('n', '<C-b>x', '<cmd>bdelete<CR>', {
     desc = 'close buffer',
 })
