@@ -17,7 +17,7 @@ return {
         filesystem = {
             filtered_items = {
                 hide_dotfiles = false,
-                hide_git_ignored = false,
+                hide_gitignored = false,
             },
             hijack_netrw_behavior = 'open_current',
             window = {
