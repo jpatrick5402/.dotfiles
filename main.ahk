@@ -102,7 +102,7 @@ WorkSignature :=
     Send WorkSignature
 }
 :X:_align:: {
-    SEND "Aligned Licensing to A3 via HDAMU`r"
+    SEND "Aligned Licensing via HDAMU`r"
     Send "`rIf you have any questions or need assistance, please call us at (585) 275-3200.`r`r"
     Send WorkSignature
 }
