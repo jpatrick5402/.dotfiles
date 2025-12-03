@@ -3,3 +3,5 @@ if status is-interactive
 end
 
 set fish_greeting
+
+alias zel zellij
