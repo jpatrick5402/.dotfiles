@@ -95,40 +95,11 @@ PersonalSignature := "Joseph Patrick`r(409) 344-1823"
 
 ; Work stuff
 WorkSignature :=
-    "Joseph Patrick`rService Desk Support Tech III – Technology and Infrastructure`rInformation Systems Division (ISD)`rUniversity of Rochester Medical Center`r(585) 275-3200"
-:X:_wsig:: Send WorkSignature
-:X:_wqsig:: {
-    Send "`rIf you have any questions or need assistance, please call us at (585) 275-3200.`r`r"
+    "Joseph Patrick`rApplication Administrator I – Technology and Infrastructure`rInformation Systems Division (ISD)`rUniversity of Rochester Medical Center`r(585) 275-3200"
+:X:_wsig:: {
     Send WorkSignature
-}
-:X:_align:: {
-    SEND "Aligned Licensing via HDAMU`r"
-    Send "`rIf you have any questions or need assistance, please call us at (585) 275-3200.`r`r"
-    Send WorkSignature
-}
-:X:_wstill:: {
-    Send "Hello XXXXXXXXX,`rIs this issue still occurring?`rIf you have any questions or need assistance, please call us at (585) 275-3200.`r`r"
-    Send WorkSignature
-}
-:X:_w2:: {
-    Send "Hello XXXXXXXXX,`rI've not been able to reach you after my last contact.`rDo you still need assistance with this issue?`r`rIf you have any questions or need assistance, please call us at (585) 275-3200`r`r"
-    Send WorkSignature
-}
-:X:_w3:: {
-    Send "Hello XXXXXXXXX,`rThis email is to inform you that the Help Desk has attempted to contact you without success by phone or email on the last two business days regarding the above ticket`rSince we were unable to reach you as of today, at the end of this business day we will close your ticket. If you would like this ticket to remain active, please contact us at (585) 275-3200 and reference the ticket number above.`r`r"
-    Send WorkSignature
-}
-:X:_ack:: {
-    Send "Hello XXXXXXXXX, would you be able to acknowledge XXXXXXXXX?"
-}
-:X:_ackb:: {
-    Send "Acknowledging on behalf of XXXXXXXXX per KB0013295"
-}
-:X:_dark:: {
-    Send "Please update the text-color of the article to 'Remove Color' so that this is accessible in both ServiceNow dark and light mode."
 }
 :O:unk::Unknown
-:O:_unable::Unable to contact customer after 3 attempts, closing ticket per KB0010438
 
 :X:_ts:: {
     Send FormatTime(A_Now, "MM/dd/yyy HH:mm:ss")
@@ -140,8 +111,6 @@ WorkSignature :=
 +#F23:: {
     Run "wt.exe"
 }
-
-#+q:: WinClose("A")
 
 ; hpath := EnvGet("USERPROFILE")
 ; ^!z::Run "C:\Program Files\Neovide\neovide.exe"
@@ -2488,7 +2457,6 @@ WorkSignature :=
 ::helpped::helped
 ::helpfull::helpful
 ::hemmorhage::hemorrhage
-::ehr::her
 ::ehre::here
 ::here;s::here's
 ::heridity::heredity
