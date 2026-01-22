@@ -34,3 +34,12 @@ ln -sf ~/.dotfiles/configs_linux/v2/hypr/hyprlock.conf ~/.config/hypr/hyprlock.c
 ln -sf ~/.dotfiles/configs_linux/v2/fish/config.fish ~/.config/fish/config.fish
 
 chsh -s /usr/bin/fish
+#
+# install printer drivers
+read -p "Do you want to install printer drivers for your black printer? (y/n) " response
+if [[ "$response" == "y" || "$response" == "Y" ]]; then
+  cd
+  git clone https://aur.archlinux.org/cnijfilter2.git
+  cd cnijfilter2/
+  makepkg -si --noconfirm
+fi
