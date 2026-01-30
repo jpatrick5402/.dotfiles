@@ -99,7 +99,10 @@ WorkSignature :=
 :X:_wsig:: {
     Send WorkSignature
 }
-:O:unk::Unknown
+
+::_rfad:: {
+    Send "ISDG_RightFax_AD_Production"
+}
 
 :X:_ts:: {
     Send FormatTime(A_Now, "MM/dd/yyy HH:mm:ss")
@@ -2488,7 +2491,6 @@ WorkSignature :=
 ::hindrence::hindrance
 ::hipopotamus::hippopotamus
 ::hersuit::hirsute
-::hsi::his
 ::ihs::his
 ::historicians::historians
 ::hsitorians::historians
