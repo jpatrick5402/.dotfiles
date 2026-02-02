@@ -2428,7 +2428,6 @@ WorkSignature :=
 ::harrasments::harassments
 ::harrassments::harassments
 ::hace::hare
-::hsa::has
 ::hasbeen::has been
 ::hasnt::hasn't
 ::ahev::have
