@@ -1,4 +1,4 @@
-sudo pacman -S mako qt5-wayland qt6-wayland waybar hyprpaper wl-clipboard wl-clip-persist imagemagick hyprlock hypridle btop fish wf-recorder ttf-firacode-nerd firefox neovim
+sudo pacman -S mako qt5-wayland qt6-wayland waybar hyprpaper wl-clipboard wl-clip-persist imagemagick hyprlock hypridle btop fish wf-recorder ttf-firacode-nerd firefox neovim eza
 
 # Make sure if using Nvidia GPU, you install the below package (https://wiki.archlinux.org/title/NVIDIA)
 # sudo pacman -S nvidia
@@ -19,6 +19,7 @@ mkdir ~/.config/mako/
 mkdir ~/.config/wofi/
 mkdir ~/.config/hypr/
 mkdir ~/.config/fish/
+mkdir ~/.config/eza/
 
 ln -sf ~/.dotfiles/nvim/ ~/.config/nvim/
 ln -sf ~/.dotfiles/configs_linux/v2/kitty/kitty.conf ~/.config/kitty/kitty.conf
@@ -32,6 +33,7 @@ ln -sf ~/.dotfiles/configs_linux/v2/hypr/hypridle.conf ~/.config/hypr/hypridle.c
 ln -sf ~/.dotfiles/configs_linux/v2/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
 ln -sf ~/.dotfiles/configs_linux/v2/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ln -sf ~/.dotfiles/configs_linux/v2/fish/config.fish ~/.config/fish/config.fish
+ln -sf ~/.dotfiles/configs_linux/v2/eza/theme.yml ~/.config/eza/theme.yml
 
 chsh -s /usr/bin/fish
 #

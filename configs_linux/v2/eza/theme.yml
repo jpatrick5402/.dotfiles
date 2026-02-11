@@ -1,0 +1,42 @@
+# ~/.config/eza/theme.yml
+filekinds:
+  normal:
+    foreground: "#c0c0c0"   # light grey
+  directory:
+    foreground: "#7fa2c7"   # soft blue
+    is_bold: false
+  symlink:
+    foreground: "#9aa7c8"   # desaturated blue-grey
+  executable:
+    foreground: "#c9a86a"   # muted gold
+  hidden:
+    foreground: "#7a7a7a"   # mid grey
+
+perms:
+  read:
+    foreground: "#6fa171"   # soft green
+  write:
+    foreground: "#c26c6c"   # soft red
+  exec:
+    foreground: "#c9a86a"   # muted gold
+
+git:
+  new:
+    foreground: "#6fa171"
+  modified:
+    foreground: "#c9a86a"
+  deleted:
+    foreground: "#c26c6c"
+  renamed:
+    foreground: "#7fa2c7"
+
+size:
+  number:
+    foreground: "#c0c0c0"
+  unit:
+    foreground: "#8a8c94"
+
+dates:
+  date:
+    foreground: "#8a8c94"
+
