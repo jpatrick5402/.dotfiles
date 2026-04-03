@@ -43,9 +43,3 @@ function fish_prompt --description 'Muted, minimal prompt'
     printf '%s❯%s ' $c_symbol $c_normal
 end
 
-
-alias ls='eza -lh --group-directories-first --icons=auto'
-alias lsa='ls -a'
-alias lt='eza --tree --level=2 --long --icons --git'
-alias lta='lt -a'
-

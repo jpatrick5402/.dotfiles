@@ -25,6 +25,7 @@
         "disk",
         "network",
         "pulseaudio",
+        "bluetooth",
         "battery",
         "clock",
         "custom/notifications"
@@ -35,18 +36,15 @@
         "format": "{name}",
         "on-click": "activate"
     },
-    
     "hyprland/window": {
         "format": "{title}"
     },
-    
     "custom/launcher": {
         "format": "󰣇",
         "tooltip": true,
         "tooltip-format": "Applications",
         "on-click": "wofi" // Or your preferred app launcher command
     },
-    
     "tray": {
         "icon-size": 18,
         "spacing": 10
@@ -56,19 +54,16 @@
         "format": " {usage}%",
         "on-click": "hyprctl -q dispatch exec kitty btop",
     },
-    
     "memory": {
         "format": "󰍛 {}%",
         "on-click": "hyprctl -q dispatch exec kitty btop",
     },
-    
     "disk": {
         "format": "󰋊 {percentage_used}%",
         "tooltip": true,
         "path": "/",
         "on-click": "baobab",
     },
-    
     "network": {
         "format-wifi": "󰤨 {signalStrength}%",
         "format-ethernet": "󰈀 {ifname}",
@@ -77,7 +72,6 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "Disconnected"
     },
-    
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "󰂱 {volume}%",
@@ -89,7 +83,16 @@
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     },
-    
+    "bluetooth": {
+        // Simple icon-only display
+        "format-on": "",
+        "format-off": "",
+        "tooltip-format": "{status}",
+        // Left click opens Blueman manager (or your tool of choice)
+        "on-click": "blueman-manager",
+        // Optional: right click toggles bluetooth via rfkill or bluetoothctl
+        "on-click-right": "rfkill toggle bluetooth"
+    },
     "battery": {
         "states": {
             "good": 90,
@@ -102,12 +105,10 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-    
     "clock": {
         "format": "󰃰 {:%a %b %d %H:%M}",
         "tooltip-format": "{:%Y %B %d %H:%M}"
     },
-    
     "custom/notifications": {
         "format": " ",
         "tooltip": true,
