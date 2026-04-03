@@ -3,3 +3,5 @@
 These are my dotfiles
 
 feel free to use them to help you on your journey
+
+Also, if you see anything wrong, I always welcome constructive criticism
