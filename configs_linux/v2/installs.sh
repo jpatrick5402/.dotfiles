@@ -34,6 +34,7 @@ ln -sf ~/.dotfiles/configs_linux/v2/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper
 ln -sf ~/.dotfiles/configs_linux/v2/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ln -sf ~/.dotfiles/configs_linux/v2/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/.dotfiles/configs_linux/v2/eza/theme.yml ~/.config/eza/theme.yml
+ln -sf ~/.dotfiles/configs_linux/v2/swappy/ ~/.config/
 
 chsh -s /usr/bin/fish
 #
