@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
@@ -25,7 +27,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.inccommand = "split"
-vim.opt.cursorline = true
+--vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
@@ -79,7 +81,7 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd('colorscheme everforest')
+vim.cmd("colorscheme everforest")
 
 require("mappings")
 require("autocmds")
