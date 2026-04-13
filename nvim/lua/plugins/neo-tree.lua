@@ -19,6 +19,7 @@ return {
 				bind_to_cwd = true,
 			},
 			window = {},
+			close_if_last_window = true,
 		},
 	},
 	{
