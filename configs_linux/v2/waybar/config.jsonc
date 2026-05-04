@@ -85,8 +85,8 @@
     },
     "bluetooth": {
         // Simple icon-only display
-        "format-on": "",
-        "format-off": "",
+        "format-on": "󰂯",
+        "format-off": "󰂯",
         "tooltip-format": "{status}",
         // Left click opens Blueman manager (or your tool of choice)
         "on-click": "blueman-manager",
