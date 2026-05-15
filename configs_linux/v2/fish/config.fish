@@ -43,3 +43,4 @@ function fish_prompt --description 'Muted, minimal prompt'
     printf '%s❯%s ' $c_symbol $c_normal
 end
 
+zoxide init fish | source
