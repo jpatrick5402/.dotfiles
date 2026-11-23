@@ -204,7 +204,9 @@ return {
                 --    https://github.com/pmizio/typescript-tools.nvim
                 --
                 -- But for many setups, the LSP (`ts_ls`) will work just fine
-                -- ts_ls = {},
+                ts_ls = {}, -- TypeScript/JavaScript, incl. .tsx/.jsx (Next.js)
+                eslint = {}, -- ESLint diagnostics + fix-all (flat config OK)
+                tailwindcss = {}, -- Tailwind class completion/linting in className
                 --
 
                 lua_ls = {
