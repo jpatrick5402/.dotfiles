@@ -430,3 +430,43 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+-- Force Fallout 4 to open on your main monitor and workspace
+hl.window_rule({
+	match = { class = "steam_app_377160" },
+	monitor = "DP-2", -- Replace with your output from 'hyprctl monitors'
+	workspace = "1",
+})
+
+hl.workspace_rule({
+	workspace = "1",
+	monitor = "DP-2",
+	default = true,
+	persistent = true,
+})
+
+hl.workspace_rule({
+	workspace = "2",
+	monitor = "DP-2",
+	persistent = true,
+})
+hl.workspace_rule({
+	workspace = "3",
+	monitor = "DP-1",
+	persistent = true,
+})
+hl.workspace_rule({
+	workspace = "4",
+	monitor = "DP-1",
+	persistent = true,
+})
+hl.workspace_rule({
+	workspace = "5",
+	monitor = "HDMI-A-1",
+	persistent = true,
+})
+hl.workspace_rule({
+	workspace = "6",
+	monitor = "HDMI-A-2",
+	persistent = true,
+})
